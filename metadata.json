@@ -1,0 +1,8 @@
+{
+  "name": "EVE Medic",
+  "description": "Professional medical platform featuring EVE System and EVE Education.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
