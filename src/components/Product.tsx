@@ -3,25 +3,10 @@ import { motion, AnimatePresence } from "motion/react";
 import { Section } from "./Section";
 import { SECTIONS } from "../constants";
 import { Activity, BookOpen, CheckCircle2, ChevronRight, GraduationCap, Zap } from "lucide-react";
+import { EveEducationPortal } from "./EveEducationPortal";
 
 export const Product = () => {
   const [activeTab, setActiveTab] = useState<"system" | "education">("system");
-
-  const educationInfo = {
-    title: "EVE Education",
-    desc: "Comprehensive medical training and educational resources available at evemedic.co",
-    link: "https://evemedic.co/",
-    features: [
-      "Access to global medical research",
-      "Interactive training modules for practitioners",
-      "Latest health clarity reports and studies",
-      "Clinical practice optimization guides"
-    ],
-    highlights: [
-      { icon: <BookOpen />, label: "Resource Library" },
-      { icon: <GraduationCap />, label: "Certification" },
-    ]
-  };
 
   const systemInfo = {
     title: "EVE System",
@@ -37,8 +22,6 @@ export const Product = () => {
       { icon: <Zap />, label: "Instant Clarity" },
     ]
   };
-
-  const current = activeTab === "system" ? systemInfo : educationInfo;
 
   return (
     <Section id={SECTIONS.PRODUCT} className="bg-black">
@@ -66,82 +49,83 @@ export const Product = () => {
       </div>
 
       <AnimatePresence mode="wait">
-        <motion.div
-          key={activeTab}
-          initial={{ opacity: 0, scale: 0.98, y: 10 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          exit={{ opacity: 0, scale: 1.02, y: -10 }}
-          transition={{ duration: 0.4, ease: "circOut" }}
-          className="grid lg:grid-cols-2 gap-12 items-center"
-        >
-          {/* Content Left */}
-          <div className="order-2 lg:order-1">
-            <h4 className="text-4xl font-extrabold text-white mb-6 uppercase tracking-tight">{current.title}</h4>
-            <p className="text-xl text-gray-400 mb-10 leading-relaxed">{current.desc}</p>
-            
-            <div className="space-y-4 mb-10">
-              {current.features.map((feature, i) => (
-                <div key={i} className="flex items-start gap-4 p-4 rounded-2xl bg-white/5 border border-white/5 hover:border-white/10 transition-colors">
-                  <CheckCircle2 className="text-indigo-500 mt-1 shrink-0" size={20} />
-                  <span className="text-gray-300 font-medium">{feature}</span>
-                </div>
-              ))}
+        {activeTab === "system" ? (
+          <motion.div
+            key="system"
+            initial={{ opacity: 0, scale: 0.98, y: 10 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 1.02, y: -10 }}
+            transition={{ duration: 0.4, ease: "circOut" }}
+            className="grid lg:grid-cols-2 gap-12 items-center"
+          >
+            {/* Content Left */}
+            <div className="order-2 lg:order-1">
+              <h4 className="text-4xl font-extrabold text-white mb-6 uppercase tracking-tight">{systemInfo.title}</h4>
+              <p className="text-xl text-gray-400 mb-10 leading-relaxed">{systemInfo.desc}</p>
+              
+              <div className="space-y-4 mb-10">
+                {systemInfo.features.map((feature, i) => (
+                  <div key={i} className="flex items-start gap-4 p-4 rounded-2xl bg-white/5 border border-white/5 hover:border-white/10 transition-colors">
+                    <CheckCircle2 className="text-indigo-500 mt-1 shrink-0" size={20} />
+                    <span className="text-gray-300 font-medium">{feature}</span>
+                  </div>
+                ))}
+              </div>
             </div>
 
-            {activeTab === "education" && (
-              <a 
-                href={educationInfo.link} 
-                target="_blank" 
-                rel="noreferrer"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-white text-black font-bold rounded-2xl hover:bg-gray-200 transition-colors"
-              >
-                Visit evemedic.co
-                <ChevronRight size={18} />
-              </a>
-            )}
-          </div>
-
-          {/* Visual Right */}
-          <div className="order-1 lg:order-2">
-            <div className={`aspect-square rounded-[60px] overflow-hidden relative border border-white/10 bg-gradient-to-tr ${activeTab === 'system' ? 'from-indigo-900/40 via-blue-900/20 to-purple-900/10' : 'from-purple-900/40 via-pink-900/20 to-indigo-900/10'}`}>
-              <div className="absolute inset-0 flex items-center justify-center p-12">
-                <div className="grid grid-cols-2 gap-6 w-full">
-                  {current.highlights.map((h, i) => (
-                    <motion.div
-                      key={i}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: i * 0.1 + 0.3 }}
-                      className="p-8 rounded-[40px] bg-white/5 border border-white/10 backdrop-blur-xl flex flex-col items-center justify-center gap-4 text-center group hover:bg-white/10 transition-all cursor-default"
-                    >
-                      <div className="text-indigo-400 group-hover:scale-110 transition-transform">
-                        <div className="w-12 h-12 flex items-center justify-center bg-indigo-500/20 rounded-2xl">
-                           <div className="w-8 h-8 text-indigo-400">
-                             {h.icon}
-                           </div>
+            {/* Visual Right */}
+            <div className="order-1 lg:order-2">
+              <div className="aspect-square rounded-[60px] overflow-hidden relative border border-white/10 bg-gradient-to-tr from-indigo-900/40 via-blue-900/20 to-purple-900/10">
+                <div className="absolute inset-0 flex items-center justify-center p-12">
+                  <div className="grid grid-cols-2 gap-6 w-full">
+                    {systemInfo.highlights.map((h, i) => (
+                      <motion.div
+                        key={i}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: i * 0.1 + 0.3 }}
+                        className="p-8 rounded-[40px] bg-white/5 border border-white/10 backdrop-blur-xl flex flex-col items-center justify-center gap-4 text-center group hover:bg-white/10 transition-all cursor-default"
+                      >
+                        <div className="text-indigo-400 group-hover:scale-110 transition-transform">
+                          <div className="w-12 h-12 flex items-center justify-center bg-indigo-500/20 rounded-2xl">
+                             <div className="w-8 h-8 text-indigo-400">
+                               {h.icon}
+                             </div>
+                          </div>
                         </div>
+                        <span className="text-xs font-black uppercase tracking-[0.2em] text-white/60">{h.label}</span>
+                      </motion.div>
+                    ))}
+                    
+                    <div className="col-span-2 p-8 rounded-[40px] bg-white text-black flex items-center justify-between shadow-2xl">
+                      <div className="flex flex-col">
+                        <span className="text-[10px] uppercase tracking-widest font-bold opacity-60">Status</span>
+                        <span className="text-xl font-black">ACTIVE</span>
                       </div>
-                      <span className="text-xs font-black uppercase tracking-[0.2em] text-white/60">{h.label}</span>
-                    </motion.div>
-                  ))}
-                  
-                  <div className="col-span-2 p-8 rounded-[40px] bg-white text-black flex items-center justify-between shadow-2xl">
-                    <div className="flex flex-col">
-                      <span className="text-[10px] uppercase tracking-widest font-bold opacity-60">Status</span>
-                      <span className="text-xl font-black">ACTIVE</span>
-                    </div>
-                    <div className="w-12 h-12 bg-black rounded-full flex items-center justify-center">
-                       <Activity className="text-white" size={24} />
+                      <div className="w-12 h-12 bg-black rounded-full flex items-center justify-center">
+                         <Activity className="text-white" size={24} />
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
 
-              {/* Decorative Blur */}
-              <div className={`absolute top-0 right-0 w-64 h-64 blur-[100px] rounded-full ${activeTab === 'system' ? 'bg-blue-600/30' : 'bg-purple-600/30'}`} />
+                {/* Decorative Blur */}
+                <div className="absolute top-0 right-0 w-64 h-64 blur-[100px] rounded-full bg-blue-600/30" />
+              </div>
             </div>
-          </div>
-        </motion.div>
+          </motion.div>
+        ) : (
+          <motion.div
+            key="education"
+            initial={{ opacity: 0, scale: 0.98, y: 10 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 1.02, y: -10 }}
+            transition={{ duration: 0.4, ease: "circOut" }}
+            className="w-full"
+          >
+            <EveEducationPortal />
+          </motion.div>
+        )}
       </AnimatePresence>
     </Section>
   );
