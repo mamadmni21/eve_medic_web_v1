@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Menu, X, Mail } from "lucide-react";
 import { SECTIONS } from "../constants";
+import { useLanguage } from "../context/LanguageContext";
 
 interface NavbarProps {
   onSendMessage: () => void;
@@ -10,6 +11,7 @@ interface NavbarProps {
 export const Navbar = ({ onSendMessage }: NavbarProps) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { language, setLanguage, t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,10 +22,10 @@ export const Navbar = ({ onSendMessage }: NavbarProps) => {
   }, []);
 
   const navLinks = [
-    { name: "Home", id: SECTIONS.HOME },
-    { name: "About Us", id: SECTIONS.ABOUT },
-    { name: "Product", id: SECTIONS.PRODUCT },
-    { name: "Contact Us", id: SECTIONS.CONTACT },
+    { name: t.nav.home, id: SECTIONS.HOME },
+    { name: t.nav.about, id: SECTIONS.ABOUT },
+    { name: t.nav.product, id: SECTIONS.PRODUCT },
+    { name: t.nav.contact, id: SECTIONS.CONTACT },
   ];
 
   const scrollToSection = (id: string) => {
@@ -34,8 +36,84 @@ export const Navbar = ({ onSendMessage }: NavbarProps) => {
     setIsMobileMenuOpen(false);
   };
 
+  const languages = [
+    {
+      code: "en",
+      label: "English",
+      flag: (
+        <svg className="w-5 h-5 rounded-full object-cover shrink-0 border border-white/20" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <clipPath id="en-clip"><circle cx="15" cy="15" r="15"/></clipPath>
+          <g clipPath="url(#en-clip)">
+            <rect width="30" height="30" fill="#012169"/>
+            <path d="M0 0L30 30M30 0L0 30" stroke="#fff" strokeWidth="3"/>
+            <path d="M0 0L30 30M30 0L0 30" stroke="#C8102E" strokeWidth="2"/>
+            <path d="M15 0V30M0 15H30" stroke="#fff" strokeWidth="5"/>
+            <path d="M15 0V30M0 15H30" stroke="#C8102E" strokeWidth="3"/>
+          </g>
+        </svg>
+      )
+    },
+    {
+      code: "ms",
+      label: "Malaysia",
+      flag: (
+        <svg className="w-5 h-5 rounded-full object-cover shrink-0 border border-white/20" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <clipPath id="ms-clip"><circle cx="15" cy="15" r="15"/></clipPath>
+          <g clipPath="url(#ms-clip)">
+            <rect width="30" height="30" fill="#fff"/>
+            {/* 14 Stripes */}
+            <rect width="30" height="2.14" fill="#C8102E"/>
+            <rect y="4.28" width="30" height="2.14" fill="#C8102E"/>
+            <rect y="8.56" width="30" height="2.14" fill="#C8102E"/>
+            <rect y="12.84" width="30" height="2.14" fill="#C8102E"/>
+            <rect y="17.12" width="30" height="2.14" fill="#C8102E"/>
+            <rect y="21.4" width="30" height="2.14" fill="#C8102E"/>
+            <rect y="25.68" width="30" height="2.14" fill="#C8102E"/>
+            {/* Canton */}
+            <rect width="15" height="15" fill="#012169"/>
+            {/* Crescent */}
+            <circle cx="6.5" cy="7.5" r="4.5" fill="#FFC72C"/>
+            <circle cx="8" cy="7.5" r="4.5" fill="#012169"/>
+            {/* Star simplified */}
+            <polygon points="11,7.5 10,6.5 11.5,5.5 10,5.3 10.5,3.9 9.1,4.6 9,3.2 8,4.3 7.1,3.2 7,4.6 5.6,3.9 6.1,5.3 4.6,5.5 5.9,6.5" fill="#FFC72C"/>
+          </g>
+        </svg>
+      )
+    },
+    {
+      code: "id",
+      label: "Indonesia",
+      flag: (
+        <svg className="w-5 h-5 rounded-full object-cover shrink-0 border border-white/20" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <clipPath id="id-clip"><circle cx="15" cy="15" r="15"/></clipPath>
+          <g clipPath="url(#id-clip)">
+            <rect width="30" height="15" fill="#C8102E"/>
+            <rect y="15" width="30" height="15" fill="#FFFFFF"/>
+          </g>
+        </svg>
+      )
+    },
+    {
+      code: "zh",
+      label: "Chinese",
+      flag: (
+        <svg className="w-5 h-5 rounded-full object-cover shrink-0 border border-white/20" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <clipPath id="zh-clip"><circle cx="15" cy="15" r="15"/></clipPath>
+          <g clipPath="url(#zh-clip)">
+            <rect width="30" height="30" fill="#EE1C25"/>
+            <polygon points="7.5,9 6,4.5 10.5,6.7 4.5,6.7 9,4.5" fill="#FFFF00"/>
+            <polygon points="13.5,3.75 12.3,4.95 12.45,3.3 13.5,3 12.6,2.7" fill="#FFFF00"/>
+            <polygon points="15.75,6 14.4,6.9 14.85,5.25 15.9,4.5 15,4.2" fill="#FFFF00"/>
+            <polygon points="15.75,9.75 14.4,10.2 15,8.55 15.9,8.1 15.15,7.8" fill="#FFFF00"/>
+            <polygon points="13.5,12 12.15,12.15 12.9,10.65 13.65,9.9 12.75,9.6" fill="#FFFF00"/>
+          </g>
+        </svg>
+      )
+    }
+  ];
+
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-black/80 backdrop-blur-md py-4' : 'bg-transparent py-6'}`}>
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-black/90 backdrop-blur-md py-4 shadow-lg' : 'bg-transparent py-6'}`}>
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
         <motion.div 
           initial={{ opacity: 0, x: -20 }}
@@ -58,22 +136,53 @@ export const Navbar = ({ onSendMessage }: NavbarProps) => {
               {link.name}
             </button>
           ))}
+
+          {/* Inline Flags Multi Language Selector */}
+          <div className="flex items-center gap-1 bg-white/5 border border-white/10 rounded-full p-1">
+            {languages.map((lang) => (
+              <button
+                key={lang.code}
+                onClick={() => setLanguage(lang.code as any)}
+                title={lang.label}
+                className={`relative p-1 rounded-full transition-all flex items-center justify-center hover:scale-110 active:scale-95 ${language === lang.code ? 'bg-indigo-600 ring-2 ring-indigo-400 border-indigo-400 scale-105' : 'opacity-70 hover:opacity-100'}`}
+              >
+                {lang.flag}
+              </button>
+            ))}
+          </div>
+
           <button
             onClick={onSendMessage}
             className="px-5 py-2 bg-indigo-600 text-white rounded-full text-sm font-semibold hover:bg-indigo-700 transition-all flex items-center gap-2"
           >
             <Mail size={16} />
-            Send Message
+            {t.nav.sendMessage}
           </button>
         </div>
 
-        {/* Mobile Toggle */}
-        <button 
-          className="md:hidden text-white"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        >
-          {isMobileMenuOpen ? <X /> : <Menu />}
-        </button>
+        {/* Mobile Toggle & Mobile Flags display */}
+        <div className="flex items-center gap-4 md:hidden">
+          {/* Flag Toggle for Mobile bar */}
+          <div className="flex items-center gap-1.5 bg-white/5 border border-white/10 rounded-full p-1">
+            {languages.map((lang) => (
+              <button
+                key={lang.code}
+                onClick={() => setLanguage(lang.code as any)}
+                title={lang.label}
+                className={`relative p-1 rounded-full transition-all ${language === lang.code ? 'bg-indigo-600 ring-2 ring-indigo-400 opacity-100' : 'opacity-50'}`}
+              >
+                {lang.flag}
+              </button>
+            ))}
+          </div>
+          
+          <button 
+            className="text-white"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? <X /> : <Menu />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
@@ -100,7 +209,7 @@ export const Navbar = ({ onSendMessage }: NavbarProps) => {
                 className="w-full py-3 bg-indigo-600 text-white rounded-xl font-semibold flex items-center justify-center gap-2"
               >
                 <Mail size={20} />
-                Send Message
+                {t.nav.sendMessage}
               </button>
             </div>
           </motion.div>

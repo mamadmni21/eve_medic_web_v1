@@ -6,9 +6,11 @@ import { Product } from "./components/Product";
 import { Contact } from "./components/Contact";
 import { PopupForm } from "./components/PopupForm";
 import { SECTIONS } from "./constants";
+import { useLanguage } from "./context/LanguageContext";
 
 export default function App() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const { t } = useLanguage();
 
   return (
     <div className="bg-black text-white selection:bg-indigo-500 selection:text-white">
@@ -29,12 +31,12 @@ export default function App() {
           </div>
           
           <p className="text-gray-500 text-sm">
-            © {new Date().getFullYear()} EVE Medic. All rights reserved. Professional Healthcare Platform.
+            © {new Date().getFullYear()} {t.footer.rights}
           </p>
           
           <div className="flex gap-8">
-             <button className="text-xs font-bold text-gray-500 hover:text-white uppercase tracking-widest transition-colors">Privacy Policy</button>
-             <button className="text-xs font-bold text-gray-500 hover:text-white uppercase tracking-widest transition-colors">Terms of Service</button>
+             <button className="text-xs font-bold text-gray-500 hover:text-white uppercase tracking-widest transition-colors">{t.footer.privacy}</button>
+             <button className="text-xs font-bold text-gray-500 hover:text-white uppercase tracking-widest transition-colors">{t.footer.terms}</button>
           </div>
         </div>
       </footer>

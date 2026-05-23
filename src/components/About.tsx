@@ -2,23 +2,26 @@ import { motion } from "motion/react";
 import { Section } from "./Section";
 import { SECTIONS } from "../constants";
 import { Shield, Target, Award } from "lucide-react";
+import { useLanguage } from "../context/LanguageContext";
 
 export const About = () => {
+  const { t } = useLanguage();
+
   const details = [
     {
       icon: <Shield className="text-indigo-500" size={32} />,
-      title: "Our Mission",
-      desc: "To empower healthcare professionals with clinical clarity and seamless digital tools that prioritize patient outcomes."
+      title: t.about.missionTitle,
+      desc: t.about.missionDesc
     },
     {
       icon: <Target className="text-purple-500" size={32} />,
-      title: "Patient Focused",
-      desc: "From the first kick to birth, we ensure a safe and monitored journey for every patient through data-driven insights."
+      title: t.about.patientTitle,
+      desc: t.about.patientDesc
     },
     {
       icon: <Award className="text-blue-500" size={32} />,
-      title: "Excellence",
-      desc: "EVE System represents the pinnacle of medical technology, integrating education and practice into one unified platform."
+      title: t.about.excellenceTitle,
+      desc: t.about.excellenceDesc
     }
   ];
 
@@ -26,13 +29,13 @@ export const About = () => {
     <Section id={SECTIONS.ABOUT} className="bg-zinc-950">
       <div className="grid md:grid-template-columns-[1.2fr_1fr] gap-16 items-center">
         <div>
-          <h2 className="text-sm font-bold text-indigo-500 uppercase tracking-[0.3em] mb-4">About EVE Medic</h2>
+          <h2 className="text-sm font-bold text-indigo-500 uppercase tracking-[0.3em] mb-4">{t.about.badge}</h2>
           <h3 className="text-4xl md:text-6xl font-black text-white mb-8 tracking-tighter leading-[1.1]">
-            REDEFINING THE <br />
-            MEDICAL EXPERIENCE.
+            {t.about.title1} <br />
+            {t.about.title2}
           </h3>
           <p className="text-lg text-gray-400 mb-10 leading-relaxed font-medium">
-            At EVE Medic, we believe in the power of clarity. Our systems are designed to provide a comprehensive snapshot of a patient's health, allowing doctors to make informed decisions faster and with more confidence than ever before.
+            {t.about.desc}
           </p>
           
           <div className="space-y-8">
@@ -68,7 +71,7 @@ export const About = () => {
             
             <div className="absolute bottom-8 left-8 right-8 p-6 rounded-3xl bg-white/5 backdrop-blur-xl border border-white/10">
               <p className="text-white font-bold text-lg mb-1">Dr. Eve Sterling</p>
-              <p className="text-indigo-400 text-sm font-semibold uppercase tracking-wider">Chief Medical Officer</p>
+              <p className="text-indigo-400 text-sm font-semibold uppercase tracking-wider">{t.about.cmo}</p>
             </div>
           </div>
 

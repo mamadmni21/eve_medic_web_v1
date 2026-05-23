@@ -1,12 +1,15 @@
 import { motion } from "motion/react";
 import { ChevronRight, MessageSquare } from "lucide-react";
 import { SECTIONS } from "../constants";
+import { useLanguage } from "../context/LanguageContext";
 
 interface HeroProps {
   onSendMessage: () => void;
 }
 
 export const Hero = ({ onSendMessage }: HeroProps) => {
+  const { t } = useLanguage();
+
   const scrollToProducts = () => {
     const element = document.getElementById(SECTIONS.PRODUCT);
     if (element) {
@@ -49,18 +52,18 @@ export const Hero = ({ onSendMessage }: HeroProps) => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <span className="inline-block px-4 py-1.5 mb-6 rounded-full bg-white/5 border border-white/10 text-indigo-400 text-xs font-bold uppercase tracking-widest backdrop-blur-sm">
-            Professional Medical Solutions
+          <span className="inline-block px-4 py-1.5 mb-6 rounded-full bg-white/5 border border-white/10 text-indigo-400 text-xs font-bold uppercase tracking-widest backdrop-blur-sm animate-pulse">
+            {t.hero.badge}
           </span>
           <h1 className="text-5xl md:text-8xl font-black text-white tracking-tighter mb-8 leading-[0.9]">
-            ADVANCING <br />
+            {t.hero.title1} <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-500">
-              HEALTHCARE
+              {t.hero.titleAccent}
             </span>{" "}
-            TOGETHER
+            {t.hero.title2}
           </h1>
           <p className="text-lg md:text-xl text-gray-400 mb-12 max-w-2xl mx-auto font-medium leading-relaxed">
-            EVE Medic provides clinical clarity and a seamless care experience from first kick to birth. Explore our platform for cutting-edge medical systems and education.
+            {t.hero.desc}
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -68,7 +71,7 @@ export const Hero = ({ onSendMessage }: HeroProps) => {
               onClick={scrollToProducts}
               className="w-full sm:w-auto px-8 py-4 bg-indigo-600 hover:bg-indigo-700 text-white rounded-2xl font-bold text-lg transition-all flex items-center justify-center gap-2 group shadow-xl shadow-indigo-600/20"
             >
-              Explore the Platform
+              {t.hero.exploreBtn}
               <ChevronRight className="group-hover:translate-x-1 transition-transform" />
             </button>
             <button
@@ -76,7 +79,7 @@ export const Hero = ({ onSendMessage }: HeroProps) => {
               className="w-full sm:w-auto px-8 py-4 bg-white/5 hover:bg-white/10 text-white border border-white/10 rounded-2xl font-bold text-lg transition-all flex items-center justify-center gap-2 backdrop-blur-md"
             >
               <MessageSquare size={20} />
-              Send Message
+              {t.hero.messageBtn}
             </button>
           </div>
         </motion.div>
@@ -91,17 +94,17 @@ export const Hero = ({ onSendMessage }: HeroProps) => {
       >
         <div className="flex flex-col items-center">
           <span className="text-2xl font-bold text-white">99%</span>
-          <span className="text-[10px] uppercase tracking-widest font-bold">Accuracy</span>
+          <span className="text-[10px] uppercase tracking-widest font-bold">{t.hero.accuracy}</span>
         </div>
         <div className="w-[1px] h-8 bg-white/10" />
         <div className="flex flex-col items-center">
           <span className="text-2xl font-bold text-white">24/7</span>
-          <span className="text-[10px] uppercase tracking-widest font-bold">Support</span>
+          <span className="text-[10px] uppercase tracking-widest font-bold">{t.hero.support}</span>
         </div>
         <div className="w-[1px] h-8 bg-white/10" />
         <div className="flex flex-col items-center">
           <span className="text-2xl font-bold text-white">50k+</span>
-          <span className="text-[10px] uppercase tracking-widest font-bold">Patients</span>
+          <span className="text-[10px] uppercase tracking-widest font-bold">{t.hero.patients}</span>
         </div>
       </motion.div>
     </section>

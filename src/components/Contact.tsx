@@ -2,12 +2,15 @@ import { motion } from "motion/react";
 import { Section } from "./Section";
 import { SECTIONS, SOCIAL_LINKS } from "../constants";
 import { Facebook, Instagram, Youtube, Phone, Mail, MapPin } from "lucide-react";
+import { useLanguage } from "../context/LanguageContext";
 
 interface ContactProps {
   onSendMessage: () => void;
 }
 
 export const Contact = ({ onSendMessage }: ContactProps) => {
+  const { t } = useLanguage();
+
   const socials = [
     { icon: <Facebook />, link: SOCIAL_LINKS.facebook, label: "Facebook" },
     { icon: <Instagram />, link: SOCIAL_LINKS.instagram, label: "Instagram" },
@@ -23,8 +26,8 @@ export const Contact = ({ onSendMessage }: ContactProps) => {
     <Section id={SECTIONS.CONTACT} className="bg-zinc-950 border-t border-white/5">
       <div className="grid lg:grid-cols-2 gap-20 items-start">
         <div>
-          <h2 className="text-sm font-bold text-indigo-500 uppercase tracking-[0.4em] mb-4">Connect With Us</h2>
-          <h3 className="text-4xl md:text-7xl font-black text-white tracking-tighter mb-12">GET IN TOUCH.</h3>
+          <h2 className="text-sm font-bold text-indigo-500 uppercase tracking-[0.4em] mb-4">{t.contact.badge}</h2>
+          <h3 className="text-4xl md:text-7xl font-black text-white tracking-tighter mb-12">{t.contact.title}</h3>
           
           <div className="space-y-10">
             <div className="flex gap-6 items-center group">
@@ -32,7 +35,7 @@ export const Contact = ({ onSendMessage }: ContactProps) => {
                 <Mail size={24} />
               </div>
               <div className="flex flex-col">
-                <span className="text-xs font-bold text-gray-500 uppercase tracking-widest">Email Address</span>
+                <span className="text-xs font-bold text-gray-500 uppercase tracking-widest">{t.contact.emailLabel}</span>
                 <a href={`mailto:${SOCIAL_LINKS.email}`} className="text-xl font-bold text-white hover:text-indigo-400 transition-colors">{SOCIAL_LINKS.email}</a>
               </div>
             </div>
@@ -42,22 +45,22 @@ export const Contact = ({ onSendMessage }: ContactProps) => {
                 <MapPin size={24} />
               </div>
               <div className="flex flex-col">
-                <span className="text-xs font-bold text-gray-500 uppercase tracking-widest">Location</span>
-                <span className="text-xl font-bold text-white">Global Medical Network</span>
+                <span className="text-xs font-bold text-gray-500 uppercase tracking-widest">{t.contact.locationLabel}</span>
+                <span className="text-xl font-bold text-white">{t.contact.locationValue}</span>
               </div>
             </div>
             
             <button
               onClick={onSendMessage}
-              className="px-10 py-5 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-2xl transition-all shadow-xl shadow-indigo-600/20"
+              className="px-10 py-5 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-2xl transition-all shadow-xl shadow-indigo-600/20 cursor-pointer"
             >
-              Send Application Message
+              {t.contact.sendBtn}
             </button>
           </div>
         </div>
 
         <div className="bg-white/5 border border-white/10 rounded-[48px] p-12 backdrop-blur-sm self-stretch">
-          <h4 className="text-2xl font-black text-white mb-8 tracking-tight">Social Platforms</h4>
+          <h4 className="text-2xl font-black text-white mb-8 tracking-tight">{t.contact.socialTitle}</h4>
           <div className="grid grid-cols-2 gap-6">
             {socials.map((social, i) => (
               <a
@@ -76,7 +79,7 @@ export const Contact = ({ onSendMessage }: ContactProps) => {
           </div>
 
           <div className="mt-12 pt-12 border-t border-white/5 text-center">
-            <p className="text-gray-500 text-xs font-bold uppercase tracking-widest mb-4">Official EVE Medic Channels</p>
+            <p className="text-gray-500 text-xs font-bold uppercase tracking-widest mb-4">{t.contact.officialChannels}</p>
             <div className="flex justify-center gap-4">
                {/* Small icons row for extra flair */}
                <div className="w-8 h-8 rounded-full bg-white/5 border border-white/10" />

@@ -4,30 +4,32 @@ import { Section } from "./Section";
 import { SECTIONS } from "../constants";
 import { Activity, BookOpen, CheckCircle2, ChevronRight, GraduationCap, Zap } from "lucide-react";
 import { EveEducationPortal } from "./EveEducationPortal";
+import { useLanguage } from "../context/LanguageContext";
 
 export const Product = () => {
   const [activeTab, setActiveTab] = useState<"system" | "education">("system");
+  const { t } = useLanguage();
 
   const systemInfo = {
-    title: "EVE System",
-    desc: "A revolutionary health monitoring ecosystem for precision medicine.",
+    title: t.product.systemTitle,
+    desc: t.product.systemDesc,
     features: [
-      "Doctors can only access a snapshot of a patient's health condition",
-      "Clinical Clarity at a Glance",
-      "Seamless Care from First Kick to Birth",
-      "Real-time health telemetry integration"
+      t.product.systemF1,
+      t.product.systemF2,
+      t.product.systemF3,
+      t.product.systemF4
     ],
     highlights: [
-      { icon: <Activity />, label: "Health Snapshot" },
-      { icon: <Zap />, label: "Instant Clarity" },
+      { icon: <Activity />, label: t.product.highlight1 },
+      { icon: <Zap />, label: t.product.highlight2 },
     ]
   };
 
   return (
     <Section id={SECTIONS.PRODUCT} className="bg-black">
       <div className="text-center mb-16">
-        <h2 className="text-sm font-bold text-purple-400 uppercase tracking-[0.4em] mb-4">Our Offering</h2>
-        <h3 className="text-4xl md:text-7xl font-black text-white tracking-tighter">THE PLATFORM.</h3>
+        <h2 className="text-sm font-bold text-purple-400 uppercase tracking-[0.4em] mb-4">{t.product.badge}</h2>
+        <h3 className="text-4xl md:text-7xl font-black text-white tracking-tighter">{t.product.title}</h3>
       </div>
 
       {/* Tab Switcher */}
@@ -37,13 +39,13 @@ export const Product = () => {
             onClick={() => setActiveTab("system")}
             className={`px-8 py-3 rounded-[20px] text-sm font-bold transition-all ${activeTab === 'system' ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-600/30' : 'text-gray-400 hover:text-white'}`}
           >
-            EVE System
+            {t.product.systemTab}
           </button>
           <button
             onClick={() => setActiveTab("education")}
             className={`px-8 py-3 rounded-[20px] text-sm font-bold transition-all ${activeTab === 'education' ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-600/30' : 'text-gray-400 hover:text-white'}`}
           >
-            EVE Education
+            {t.product.educationTab}
           </button>
         </div>
       </div>
@@ -99,8 +101,8 @@ export const Product = () => {
                     
                     <div className="col-span-2 p-8 rounded-[40px] bg-white text-black flex items-center justify-between shadow-2xl">
                       <div className="flex flex-col">
-                        <span className="text-[10px] uppercase tracking-widest font-bold opacity-60">Status</span>
-                        <span className="text-xl font-black">ACTIVE</span>
+                        <span className="text-[10px] uppercase tracking-widest font-bold opacity-60">{t.product.statusLabel}</span>
+                        <span className="text-xl font-black">{t.product.statusActive}</span>
                       </div>
                       <div className="w-12 h-12 bg-black rounded-full flex items-center justify-center">
                          <Activity className="text-white" size={24} />
