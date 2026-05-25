@@ -6,9 +6,11 @@ import { useLanguage } from "../context/LanguageContext";
 
 interface NavbarProps {
   onSendMessage: () => void;
+  currentPage: string;
+  onNavigate: (page: string) => void;
 }
 
-export const Navbar = ({ onSendMessage }: NavbarProps) => {
+export const Navbar = ({ onSendMessage, currentPage, onNavigate }: NavbarProps) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { language, setLanguage, t } = useLanguage();
@@ -28,11 +30,8 @@ export const Navbar = ({ onSendMessage }: NavbarProps) => {
     { name: t.nav.contact, id: SECTIONS.CONTACT },
   ];
 
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+  const handleNavClick = (id: string) => {
+    onNavigate(id);
     setIsMobileMenuOpen(false);
   };
 
@@ -119,7 +118,7 @@ export const Navbar = ({ onSendMessage }: NavbarProps) => {
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           className="flex items-center gap-2 cursor-pointer"
-          onClick={() => scrollToSection(SECTIONS.HOME)}
+          onClick={() => handleNavClick(SECTIONS.HOME)}
         >
           <div className="w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center font-bold text-xl text-white">E</div>
           <span className="text-xl font-bold text-white tracking-tighter uppercase">EVE Medic</span>
@@ -127,15 +126,22 @@ export const Navbar = ({ onSendMessage }: NavbarProps) => {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <button
-              key={link.id}
-              onClick={() => scrollToSection(link.id)}
-              className="text-sm font-medium text-gray-300 hover:text-white transition-colors"
-            >
-              {link.name}
-            </button>
-          ))}
+          {navLinks.map((link) => {
+            const isActive = currentPage === link.id;
+            return (
+              <button
+                key={link.id}
+                onClick={() => handleNavClick(link.id)}
+                className={`text-sm font-medium transition-all ${
+                  isActive 
+                    ? "text-indigo-400 font-extrabold bg-indigo-500/10 px-4 py-2 rounded-full border border-indigo-500/20 shadow-md shadow-indigo-500/5" 
+                    : "text-gray-300 hover:text-white px-2 py-1"
+                }`}
+              >
+                {link.name}
+              </button>
+            );
+          })}
 
           {/* Inline Flags Multi Language Selector */}
           <div className="flex items-center gap-1 bg-white/5 border border-white/10 rounded-full p-1">
@@ -195,15 +201,20 @@ export const Navbar = ({ onSendMessage }: NavbarProps) => {
             className="md:hidden bg-black/95 backdrop-blur-lg overflow-hidden"
           >
             <div className="flex flex-col p-6 gap-4">
-              {navLinks.map((link) => (
-                <button
-                  key={link.id}
-                  onClick={() => scrollToSection(link.id)}
-                  className="text-left text-lg font-medium text-gray-300"
-                >
-                  {link.name}
-                </button>
-              ))}
+              {navLinks.map((link) => {
+                const isActive = currentPage === link.id;
+                return (
+                  <button
+                    key={link.id}
+                    onClick={() => handleNavClick(link.id)}
+                    className={`text-left text-lg font-medium transition-colors ${
+                      isActive ? "text-indigo-400 font-extrabold" : "text-gray-300 hover:text-white"
+                    }`}
+                  >
+                    {link.name}
+                  </button>
+                );
+              })}
               <button
                 onClick={onSendMessage}
                 className="w-full py-3 bg-indigo-600 text-white rounded-xl font-semibold flex items-center justify-center gap-2"

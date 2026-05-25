@@ -5,16 +5,14 @@ import { useLanguage } from "../context/LanguageContext";
 
 interface HeroProps {
   onSendMessage: () => void;
+  onNavigate: (page: string) => void;
 }
 
-export const Hero = ({ onSendMessage }: HeroProps) => {
+export const Hero = ({ onSendMessage, onNavigate }: HeroProps) => {
   const { t } = useLanguage();
 
-  const scrollToProducts = () => {
-    const element = document.getElementById(SECTIONS.PRODUCT);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+  const handleExplore = () => {
+    onNavigate("product");
   };
 
   return (
@@ -68,7 +66,7 @@ export const Hero = ({ onSendMessage }: HeroProps) => {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <button
-              onClick={scrollToProducts}
+              onClick={handleExplore}
               className="w-full sm:w-auto px-8 py-4 bg-indigo-600 hover:bg-indigo-700 text-white rounded-2xl font-bold text-lg transition-all flex items-center justify-center gap-2 group shadow-xl shadow-indigo-600/20"
             >
               {t.hero.exploreBtn}
