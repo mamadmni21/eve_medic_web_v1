@@ -4,6 +4,8 @@ import { Hero } from "./components/Hero";
 import { About } from "./components/About";
 import { Product } from "./components/Product";
 import { Contact } from "./components/Contact";
+import { ProblemSolution } from "./components/ProblemSolution";
+import { ClinicalInsights } from "./components/ClinicalInsights";
 import { PopupForm } from "./components/PopupForm";
 import { SECTIONS } from "./constants";
 import { useLanguage } from "./context/LanguageContext";
@@ -67,6 +69,8 @@ export default function App() {
               transition={{ duration: 0.3 }}
             >
               <Hero onSendMessage={() => setIsPopupOpen(true)} onNavigate={navigate} />
+              <ProblemSolution />
+              <ClinicalInsights />
             </motion.div>
           )}
 
