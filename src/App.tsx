@@ -11,6 +11,9 @@ import { SECTIONS } from "./constants";
 import { useLanguage } from "./context/LanguageContext";
 import { motion, AnimatePresence } from "motion/react";
 
+// @ts-ignore
+import eveLogo from "./assets/images/eve_logo.png";
+
 export default function App() {
   const getPageFromPath = (path: string): string => {
     const cleanPath = path.replace(/^\//, "").trim().toLowerCase();
@@ -115,7 +118,21 @@ export default function App() {
       <footer className="py-12 px-6 border-t border-white/5 bg-zinc-950 mt-auto">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
           <div className="flex items-center gap-2 cursor-pointer" onClick={() => navigate(SECTIONS.HOME)}>
-            <div className="w-8 h-8 bg-indigo-600 rounded-full flex items-center justify-center font-bold text-lg text-white">E</div>
+            <div className="relative w-8 h-8">
+              <img 
+                src={eveLogo} 
+                alt="EVE Logo" 
+                className="w-8 h-8 object-contain rounded-full border border-white/10" 
+                onError={(e) => {
+                  (e.currentTarget as HTMLElement).style.display = 'none';
+                  const fallback = document.getElementById('footer-logo-fallback');
+                  if (fallback) fallback.style.display = 'flex';
+                }}
+              />
+              <div id="footer-logo-fallback" style={{ display: 'none' }} className="absolute inset-0 w-8 h-8 bg-indigo-600 rounded-full flex items-center justify-center font-bold text-lg text-white">
+                E
+              </div>
+            </div>
             <span className="text-lg font-bold tracking-tighter uppercase">EVE Medic</span>
           </div>
           

@@ -4,6 +4,9 @@ import { Menu, X, Mail } from "lucide-react";
 import { SECTIONS } from "../constants";
 import { useLanguage } from "../context/LanguageContext";
 
+// @ts-ignore
+import eveLogo from "../assets/images/eve_logo.png";
+
 interface NavbarProps {
   onSendMessage: () => void;
   currentPage: string;
@@ -120,7 +123,21 @@ export const Navbar = ({ onSendMessage, currentPage, onNavigate }: NavbarProps) 
           className="flex items-center gap-2 cursor-pointer"
           onClick={() => handleNavClick(SECTIONS.HOME)}
         >
-          <div className="w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center font-bold text-xl text-white">E</div>
+          <div className="relative w-10 h-10">
+            <img 
+              src={eveLogo} 
+              alt="EVE Logo" 
+              className="w-10 h-10 object-contain rounded-full border border-white/10" 
+              onError={(e) => {
+                (e.currentTarget as HTMLElement).style.display = 'none';
+                const fallback = document.getElementById('navbar-logo-fallback');
+                if (fallback) fallback.style.display = 'flex';
+              }}
+            />
+            <div id="navbar-logo-fallback" style={{ display: 'none' }} className="absolute inset-0 w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center font-bold text-xl text-white">
+              E
+            </div>
+          </div>
           <span className="text-xl font-bold text-white tracking-tighter uppercase">EVE Medic</span>
         </motion.div>
 

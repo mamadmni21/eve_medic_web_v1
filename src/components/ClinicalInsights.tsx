@@ -16,20 +16,15 @@ import {
   Sparkles,
   TrendingUp,
   LineChart,
-  Grid,
-  Stethoscope,
-  Building2,
-  Workflow,
-  Award,
-  ArrowRight,
-  ArrowLeft,
-  ArrowDown
+  Grid
 } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
 
 // Import the high-fidelity generated image securely
 // @ts-ignore
 import dashboardImg from "../assets/images/provider_dashboard_1779979068275.png";
+// @ts-ignore
+import home2Img from "../assets/images/home/home_2.png";
 
 type OperationsKey = "mitigation" | "optimization" | "continuity";
 
@@ -795,213 +790,23 @@ export const ClinicalInsights = () => {
           </div>
         </motion.div>
 
-        {/* Stakeholder Ecosystem Connector Diagram */}
-        <div className="mt-32">
-          {/* Subheading */}
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="inline-flex items-center gap-1.5 text-[10px] tracking-[0.3em] font-mono text-indigo-400 font-extrabold uppercase bg-indigo-500/10 px-4 py-1.5 rounded-full border border-indigo-500/20 mb-4 block mx-auto w-fit">
-              <Grid size={11} className="text-indigo-400" />
-              {text.diagramBadge}
-            </span>
-            <h3 className="text-3xl md:text-5xl font-black text-white tracking-tighter uppercase mb-3">
-              {text.diagramTitle}
-            </h3>
-            <p className="text-xs md:text-sm text-gray-500 font-medium">
-              {text.diagramSubtitle}
-            </p>
+        {/* Stakeholder Ecosystem Connector Image */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="mt-16 w-full flex justify-center"
+        >
+          <div className="relative w-full max-w-5xl rounded-[32px] overflow-hidden border border-white/10 shadow-2xl bg-zinc-950/40 p-4">
+            <img 
+              src={home2Img} 
+              alt="Ecosystem Connectivity and Central Spine Architecture" 
+              className="w-full h-auto object-cover rounded-2xl"
+              referrerPolicy="no-referrer"
+            />
           </div>
-
-          <div className="grid lg:grid-cols-12 gap-8 items-stretch relative">
-            
-            {/* COLUMN 1: STAKEHOLDERS (Users 1, 2, 3) */}
-            <div className="lg:col-span-4 flex flex-col justify-center gap-6">
-              {/* Stakeholder 1: Healthcare Provider */}
-              <motion.div
-                whileHover={{ y: -4, scale: 1.01 }}
-                className="p-6 rounded-3xl bg-zinc-900/40 border border-white/5 hover:border-indigo-500/30 transition-all duration-300 relative group"
-              >
-                <div className="flex gap-4 items-center">
-                  <div className="w-12 h-12 rounded-2xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 shrink-0">
-                    <Stethoscope size={22} />
-                  </div>
-                  <div>
-                    <span className="text-[10px] uppercase font-bold tracking-widest text-indigo-400 block mb-0.5">User 1</span>
-                    <h4 className="font-extrabold text-white text-base tracking-tight uppercase">{text.user1Title}</h4>
-                    <p className="text-xs text-gray-400 leading-normal mt-1">{text.user1Value}</p>
-                  </div>
-                </div>
-
-                {/* Connection Arrow to EVE Center on hover */}
-                <div className="absolute -right-3 top-1/2 -translate-y-1/2 hidden lg:flex items-center justify-center opacity-30 group-hover:opacity-100 transition-opacity z-20">
-                  <motion.div animate={{ x: [0, 5, 0] }} transition={{ repeat: Infinity, duration: 1.5 }}>
-                    <ArrowRight className="text-indigo-400" size={18} />
-                  </motion.div>
-                </div>
-                {/* Mobile version connector */}
-                <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 lg:hidden flex items-center justify-center opacity-40">
-                  <ArrowDown className="text-indigo-400" size={16} />
-                </div>
-              </motion.div>
-
-              {/* Stakeholder 2: Partners / Institutions */}
-              <motion.div
-                whileHover={{ y: -4, scale: 1.01 }}
-                className="p-6 rounded-3xl bg-zinc-900/40 border border-white/5 hover:border-pink-500/30 transition-all duration-300 relative group"
-              >
-                <div className="flex gap-4 items-center">
-                  <div className="w-12 h-12 rounded-2xl bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-pink-400 shrink-0">
-                    <Building2 size={22} />
-                  </div>
-                  <div>
-                    <span className="text-[10px] uppercase font-bold tracking-widest text-pink-400 block mb-0.5">User 2</span>
-                    <h4 className="font-extrabold text-white text-base tracking-tight uppercase">{text.user2Title}</h4>
-                    <p className="text-xs text-gray-400 leading-normal mt-1">{text.user2Value}</p>
-                  </div>
-                </div>
-
-                {/* Connection Arrow to EVE Center on hover */}
-                <div className="absolute -right-3 top-1/2 -translate-y-1/2 hidden lg:flex items-center justify-center opacity-30 group-hover:opacity-100 transition-opacity z-20">
-                  <motion.div animate={{ x: [0, 5, 0] }} transition={{ repeat: Infinity, duration: 1.5 }}>
-                    <ArrowRight className="text-pink-400" size={18} />
-                  </motion.div>
-                </div>
-                {/* Mobile version connector */}
-                <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 lg:hidden flex items-center justify-center opacity-40">
-                  <ArrowDown className="text-pink-400" size={16} />
-                </div>
-              </motion.div>
-
-              {/* Stakeholder 3: Mothers */}
-              <motion.div
-                whileHover={{ y: -4, scale: 1.01 }}
-                className="p-6 rounded-3xl bg-zinc-900/40 border border-white/5 hover:border-emerald-500/30 transition-all duration-300 relative group"
-              >
-                <div className="flex gap-4 items-center">
-                  <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0">
-                    <Heart size={22} className="fill-emerald-500/10" />
-                  </div>
-                  <div>
-                    <span className="text-[10px] uppercase font-bold tracking-widest text-emerald-400 block mb-0.5">User 3</span>
-                    <h4 className="font-extrabold text-white text-base tracking-tight uppercase">{text.user3Title}</h4>
-                    <p className="text-xs text-gray-400 leading-normal mt-1">{text.user3Value}</p>
-                  </div>
-                </div>
-
-                {/* Connection Arrow to EVE Center on hover */}
-                <div className="absolute -right-3 top-1/2 -translate-y-1/2 hidden lg:flex items-center justify-center opacity-30 group-hover:opacity-100 transition-opacity z-20">
-                  <motion.div animate={{ x: [0, 5, 0] }} transition={{ repeat: Infinity, duration: 1.5 }}>
-                    <ArrowRight className="text-emerald-400" size={18} />
-                  </motion.div>
-                </div>
-                {/* Mobile version connector */}
-                <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 lg:hidden flex items-center justify-center opacity-40">
-                  <ArrowDown className="text-emerald-400" size={16} />
-                </div>
-              </motion.div>
-            </div>
-
-            {/* COLUMN 2: THE EVE SPINE ENGINE (CENTRAL NODE RECEIVING STREAMS) */}
-            <div className="lg:col-span-4 flex flex-col items-center justify-center bg-gradient-to-b from-indigo-950/25 via-zinc-950/50 to-black border border-indigo-500/30 hover:border-indigo-500/50 transition-colors duration-500 p-8 rounded-[40px] text-center min-h-[380px] relative overflow-hidden group/center">
-              
-              {/* Grid patterns in central spine */}
-              <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.01)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.01)_1px,transparent_1px)] bg-[size:16px_16px] pointer-events-none opacity-40" />
-              
-              <div className="relative z-10 space-y-6 flex flex-col items-center">
-                {/* Glowing Outer Rings */}
-                <div className="relative w-28 h-28 flex items-center justify-center">
-                  <div className="absolute inset-0 w-full h-full rounded-full border border-indigo-500/20 animate-ping duration-[3s]" />
-                  <div className="absolute inset-2 w-[80%] h-[80%] rounded-full border border-pink-500/10 animate-pulse" />
-                  <div className="absolute inset-0 bg-indigo-500/10 blur-xl rounded-full" />
-                  
-                  {/* Central E Logo */}
-                  <div className="w-20 h-20 bg-gradient-to-tr from-indigo-600 to-pink-600 rounded-full flex items-center justify-center font-black text-4xl text-white shadow-2xl shadow-indigo-500/30 border border-white/20 relative z-20">
-                    E
-                  </div>
-                </div>
-
-                <div className="space-y-1.5">
-                  <h4 className="text-xl font-black text-white uppercase tracking-tight">
-                    {text.centralHubTitle}
-                  </h4>
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-indigo-500/10 text-indigo-400 text-[8px] font-mono font-black tracking-widest uppercase rounded-full border border-indigo-500/20">
-                    <span className="w-1.5 h-1.5 rounded-full bg-indigo-500 animate-pulse" />
-                    {text.centralHubStatus}
-                  </span>
-                </div>
-
-                <p className="text-[10px] text-gray-500 uppercase font-bold tracking-widest">
-                  Ecosystem Hub
-                </p>
-              </div>
-
-              {/* Decorative SVG connection paths */}
-              <svg className="absolute inset-0 w-full h-full opacity-25 pointer-events-none" viewBox="0 0 100 100" preserveAspectRatio="none">
-                <line x1="0" y1="20" x2="50" y2="50" stroke="#6366f1" strokeWidth="0.5" strokeDasharray="2,2" />
-                <line x1="0" y1="50" x2="50" y2="50" stroke="#ec4899" strokeWidth="0.5" strokeDasharray="2,2" />
-                <line x1="0" y1="80" x2="50" y2="50" stroke="#10b981" strokeWidth="0.5" strokeDasharray="2,2" />
-                <line x1="100" y1="35" x2="50" y2="50" stroke="#6366f1" strokeWidth="0.5" strokeDasharray="2,2" />
-                <line x1="100" y1="65" x2="50" y2="50" stroke="#ec4899" strokeWidth="0.5" strokeDasharray="2,2" />
-              </svg>
-            </div>
-
-            {/* COLUMN 3: OUTPUT & SYSTEM ARCHITECTURE */}
-            <div className="lg:col-span-4 flex flex-col justify-center gap-6">
-              
-              {/* Output Node */}
-              <motion.div
-                whileHover={{ y: -4, scale: 1.01 }}
-                className="p-6 rounded-3xl bg-zinc-900/40 border border-white/5 hover:border-indigo-500/30 transition-all duration-300 relative group"
-              >
-                <div className="flex gap-4 items-center">
-                  <div className="w-12 h-12 rounded-2xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 shrink-0">
-                    <Award size={22} />
-                  </div>
-                  <div>
-                    <span className="text-[10px] uppercase font-bold tracking-widest text-indigo-400 block mb-0.5">Ecosystem KPI</span>
-                    <h4 className="font-extrabold text-white text-base tracking-tight uppercase">{text.outputTitle}</h4>
-                    <p className="text-xs text-gray-400 leading-normal mt-1 font-semibold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-pink-400">{text.outputValue}</p>
-                  </div>
-                </div>
-
-                {/* Connection Arrow to EVE Center on hover */}
-                <div className="absolute -left-3 top-1/2 -translate-y-1/2 hidden lg:flex items-center justify-center opacity-30 group-hover:opacity-100 transition-opacity z-20">
-                  <motion.div animate={{ x: [0, -5, 0] }} transition={{ repeat: Infinity, duration: 1.5 }}>
-                    <ArrowLeft className="text-indigo-400" size={18} />
-                  </motion.div>
-                </div>
-                {/* Mobile version connector */}
-                <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 lg:hidden flex items-center justify-center opacity-40">
-                  <ArrowDown className="text-indigo-400" size={16} />
-                </div>
-              </motion.div>
-
-              {/* Architecture Node */}
-              <motion.div
-                whileHover={{ y: -4, scale: 1.01 }}
-                className="p-6 rounded-3xl bg-zinc-900/40 border border-white/5 hover:border-pink-500/30 transition-all duration-300 relative group"
-              >
-                <div className="flex gap-4 items-center">
-                  <div className="w-12 h-12 rounded-2xl bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-pink-400 shrink-0">
-                    <Workflow size={22} />
-                  </div>
-                  <div>
-                    <span className="text-[10px] uppercase font-bold tracking-widest text-pink-400 block mb-0.5">Integration Spine</span>
-                    <h4 className="font-extrabold text-white text-base tracking-tight uppercase">{text.architectureTitle}</h4>
-                    <p className="text-xs text-gray-400 leading-normal mt-1">{text.architectureValue}</p>
-                  </div>
-                </div>
-
-                {/* Connection Arrow to EVE Center on hover */}
-                <div className="absolute -left-3 top-1/2 -translate-y-1/2 hidden lg:flex items-center justify-center opacity-30 group-hover:opacity-100 transition-opacity z-20">
-                  <motion.div animate={{ x: [0, -5, 0] }} transition={{ repeat: Infinity, duration: 1.5 }}>
-                    <ArrowLeft className="text-pink-400" size={18} />
-                  </motion.div>
-                </div>
-              </motion.div>
-            </div>
-
-          </div>
-        </div>
+        </motion.div>
 
       </div>
     </section>
