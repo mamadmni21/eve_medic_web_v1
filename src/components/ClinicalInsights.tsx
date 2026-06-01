@@ -25,6 +25,8 @@ import { useLanguage } from "../context/LanguageContext";
 import dashboardImg from "../assets/images/provider_dashboard_1779979068275.png";
 // @ts-ignore
 import home2Img from "../assets/images/home/home_2.png";
+// @ts-ignore
+import home1Img from "../assets/images/home/home_1.jpeg";
 
 type OperationsKey = "mitigation" | "optimization" | "continuity";
 
@@ -533,212 +535,25 @@ export const ClinicalInsights = () => {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-8 items-stretch">
-            
-            {/* COLUMN A: Input source (Data In) */}
-            <div className="p-8 rounded-[40px] bg-zinc-900/30 border border-white/10 hover:border-indigo-500/20 transition-all flex flex-col justify-between overflow-hidden">
-              <div>
-                <h4 className="text-lg font-black text-white uppercase tracking-tight flex items-center gap-2.5 mb-2">
-                  <Database size={18} className="text-indigo-400" />
-                  {text.inputTitle}
-                </h4>
-                <p className="text-xs text-gray-400 leading-relaxed mb-6">
-                  {text.inputDesc}
-                </p>
-
-                {/* Filter sources buttons */}
-                <div className="flex flex-wrap gap-1.5 mb-8">
-                  <button
-                    onClick={() => setSelectedSource("all")}
-                    className={`px-3 py-1.5 text-[10px] font-bold tracking-tight rounded-lg border transition-all ${selectedSource === 'all' ? 'bg-indigo-600 border-indigo-500 text-white' : 'bg-white/5 border-white/5 text-gray-500 hover:text-white'}`}
-                  >
-                    {text.sourceAll}
-                  </button>
-                  <button
-                    onClick={() => setSelectedSource("ehr")}
-                    className={`px-3 py-1.5 text-[10px] font-bold tracking-tight rounded-lg border transition-all ${selectedSource === 'ehr' ? 'bg-indigo-600 border-indigo-500 text-white' : 'bg-white/5 border-white/5 text-gray-500 hover:text-white'}`}
-                  >
-                    {text.sourceEhr}
-                  </button>
-                  <button
-                    onClick={() => setSelectedSource("patient")}
-                    className={`px-3 py-1.5 text-[10px] font-bold tracking-tight rounded-lg border transition-all ${selectedSource === 'patient' ? 'bg-indigo-600 border-indigo-500 text-white' : 'bg-white/5 border-white/5 text-gray-500 hover:text-white'}`}
-                  >
-                    {text.sourcePatient}
-                  </button>
-                  <button
-                    onClick={() => setSelectedSource("labs")}
-                    className={`px-3 py-1.5 text-[10px] font-bold tracking-tight rounded-lg border transition-all ${selectedSource === 'labs' ? 'bg-indigo-600 border-indigo-500 text-white' : 'bg-white/5 border-white/5 text-gray-500 hover:text-white'}`}
-                  >
-                    {text.sourceLabs}
-                  </button>
-                  <button
-                    onClick={() => setSelectedSource("devices")}
-                    className={`px-3 py-1.5 text-[10px] font-bold tracking-tight rounded-lg border transition-all ${selectedSource === 'devices' ? 'bg-indigo-600 border-indigo-500 text-white' : 'bg-white/5 border-white/5 text-gray-500 hover:text-white'}`}
-                  >
-                    {text.sourceDevices}
-                  </button>
-                </div>
-
-                {/* Custom SVG Interactive Bar Graph representing Ingestion volume */}
-                <div className="bg-black/40 border border-white/5 rounded-2xl p-4 flex flex-col justify-end h-56 relative overflow-hidden">
-                  
-                  {/* Grid Lines */}
-                  <div className="absolute inset-0 flex flex-col justify-between p-4 pointer-events-none opacity-10">
-                    <div className="w-full h-px bg-white border-dashed" />
-                    <div className="w-full h-px bg-white border-dashed" />
-                    <div className="w-full h-px bg-white border-dashed" />
-                    <div className="w-full h-px bg-white border-dashed" />
-                  </div>
-
-                  {/* Flow Rate indicator */}
-                  <div className="absolute top-3 left-3 flex items-center gap-1.5 text-[10px] font-mono font-bold text-indigo-400">
-                    <TrendingUp size={10} className="animate-pulse" />
-                    <span>{text.chartVolumeLabel}</span>
-                  </div>
-
-                  {/* Rendered bars */}
-                  <div className="flex items-end justify-between gap-2.5 h-36 relative z-10">
-                    {activePoints.map((p, idx) => {
-                      const percentage = (p.value / (maxValue || 1)) * 100;
-                      return (
-                        <div key={idx} className="flex-1 flex flex-col items-center group/bar cursor-pointer">
-                          <div className="relative w-full flex flex-col justify-end h-32">
-                            {/* Hover Tooltip */}
-                            <div className="absolute -top-7 left-1/2 -translate-x-1/2 bg-indigo-600 border border-indigo-400 text-white text-[9px] font-black font-mono px-1.5 py-0.5 rounded-md opacity-0 group-hover/bar:opacity-100 transition-opacity whitespace-nowrap z-20">
-                              {p.value} kb/s
-                            </div>
-                            
-                            {/* Glowing bar core */}
-                            <motion.div
-                              initial={{ height: 0 }}
-                              animate={{ height: `${percentage}%` }}
-                              transition={{ type: "spring", stiffness: 100, damping: 15 }}
-                              className="w-full bg-gradient-to-t from-indigo-950 via-indigo-500 to-indigo-300 rounded-lg group-hover/bar:brightness-110 shadow-lg"
-                            />
-                          </div>
-                          <span className="text-[8px] font-mono text-gray-500 mt-2 block">{p.label}</span>
-                        </div>
-                      );
-                    })}
-                  </div>
-                </div>
-              </div>
-              <div className="mt-4 text-center">
-                <span className="text-[10px] font-mono font-bold text-gray-500 uppercase tracking-widest flex items-center gap-2 justify-center">
-                  <LineChart size={12} className="text-indigo-400" />
-                  Live telemetry band ingestion active
-                </span>
-              </div>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="w-full flex justify-center mt-6"
+          >
+            <div className="relative w-full max-w-full rounded-[32px] overflow-hidden border border-white/10 shadow-2xl bg-zinc-950/40 p-4">
+              <img 
+                src={home1Img} 
+                alt="Clinical Hub Data Pipeline Flow Diagram" 
+                className="w-full h-auto object-cover rounded-2xl"
+                referrerPolicy="no-referrer"
+                onError={(e) => {
+                  console.error("Failed to load home_1 image");
+                }}
+              />
             </div>
-
-            {/* COLUMN B: Authorization Data Clarity */}
-            <div className="p-8 rounded-[40px] bg-zinc-900/30 border border-white/10 hover:border-pink-500/20 transition-all flex flex-col justify-between">
-              <div>
-                <h4 className="text-lg font-black text-white uppercase tracking-tight flex items-center gap-2.5 mb-2">
-                  <Key size={18} className="text-pink-500" />
-                  {text.authTitle}
-                </h4>
-                <p className="text-xs text-gray-400 leading-relaxed mb-6">
-                  {text.authDesc}
-                </p>
-
-                {/* Audit validation simulation terminal box */}
-                <div className="bg-black/60 border border-white/5 rounded-2xl p-4 font-mono text-[10px] h-[180px] overflow-y-auto leading-relaxed text-gray-400 relative">
-                  
-                  {authStatus === 'idle' && (
-                    <div className="h-full flex flex-col items-center justify-center text-center p-4">
-                      <Lock size={20} className="text-gray-600 mb-2 animate-bounce" />
-                      <span className="text-gray-500 font-bold">{text.authStatusIdle}</span>
-                    </div>
-                  )}
-
-                  {authStatus === 'decrypting' && (
-                    <div className="absolute top-3 right-3 flex items-center gap-1.5 bg-pink-500/10 text-pink-400 px-2 py-0.5 rounded-full border border-pink-500/20 text-[8px] font-bold uppercase tracking-widest">
-                      <RefreshCw size={10} className="animate-spin" />
-                      Reconciling
-                    </div>
-                  )}
-
-                  {authStatus === 'verified' && (
-                    <div className="absolute top-3 right-3 flex items-center gap-1.5 bg-emerald-500/10 text-emerald-400 px-2 py-0.5 rounded-full border border-emerald-500/20 text-[8px] font-bold uppercase tracking-widest">
-                      <CheckCircle2 size={10} />
-                      Access Granted
-                    </div>
-                  )}
-
-                  <div className="space-y-2">
-                    {authLogs.map((log, listIdx) => (
-                      <div key={listIdx} className={listIdx === authLogs.length - 1 ? "text-indigo-400 font-bold" : ""}>
-                        {log}
-                      </div>
-                    ))}
-                    {authStatus === 'decrypting' && (
-                      <span className="inline-block w-1.5 h-3 bg-indigo-400 ml-1 animate-pulse" />
-                    )}
-                  </div>
-                </div>
-              </div>
-
-              <div className="mt-8 space-y-3">
-                <button
-                  onClick={handleAuthSimulation}
-                  disabled={authStatus === 'decrypting'}
-                  className="w-full py-3 bg-gradient-to-r from-pink-600 to-indigo-600 hover:brightness-110 disabled:opacity-50 text-white font-bold text-xs rounded-xl shadow-lg transition-all active:scale-95 cursor-pointer uppercase tracking-wider"
-                >
-                  {text.btnSimulateAuth}
-                </button>
-                <div className="text-center text-[10px] font-mono text-gray-500 uppercase tracking-widest">
-                  {text.authTermVerification}
-                </div>
-              </div>
-            </div>
-
-            {/* COLUMN C: Provider Dashboard (Image Display UI) */}
-            <div className="p-8 rounded-[40px] bg-zinc-900/30 border border-white/10 hover:border-indigo-500/20 transition-all flex flex-col justify-between relative overflow-hidden group">
-              <div>
-                <h4 className="text-lg font-black text-white uppercase tracking-tight flex items-center gap-2.5 mb-2">
-                  <Smartphone size={18} className="text-indigo-400" />
-                  {text.dashboardTitle}
-                </h4>
-                <p className="text-xs text-gray-400 leading-relaxed mb-6">
-                  {text.dashboardDesc}
-                </p>
-
-                {/* Dashboard Frame loading generated UI */}
-                <div className="relative rounded-2xl border border-white/10 bg-black/80 overflow-hidden shadow-2xl h-[180px] group/dash">
-                  <img 
-                    src={dashboardImg}
-                    alt="EVE Medic Provider Dashboard Console"
-                    className="w-full h-full object-cover opacity-60 group-hover/dash:scale-105 transition-transform duration-700 pointer-events-none"
-                    referrerPolicy="no-referrer"
-                  />
-                  
-                  {/* Glowing Radar Scopes / Overlays */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent pointer-events-none" />
-
-                  {/* Operational indicators overlaid */}
-                  <div className="absolute top-3 left-3 bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 rounded-full px-2.5 py-0.5 text-[8px] font-mono font-black tracking-widest uppercase flex items-center gap-1.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                    {text.dashboardOverlayStatus}
-                  </div>
-
-                  <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-[9px] font-bold text-gray-400 backdrop-blur-md bg-zinc-950/70 border border-white/5 p-2 rounded-lg">
-                    <span className="tracking-tight uppercase">{text.dashboardHighlight1}</span>
-                    <Heart size={10} className="text-red-500 fill-red-500 animate-pulse" />
-                  </div>
-                </div>
-              </div>
-
-              <div className="mt-8">
-                <div className="flex items-center gap-2 p-3 bg-white/5 border border-white/5 rounded-xl text-[10px] font-bold font-mono text-gray-500">
-                  <Grid size={14} className="text-indigo-400 shrink-0" />
-                  <span className="uppercase tracking-widest">{text.dashboardHighlight2}</span>
-                </div>
-              </div>
-            </div>
-
-          </div>
+          </motion.div>
         </div>
 
         {/* Longitudinal Patient Record Overview Section */}
@@ -798,7 +613,7 @@ export const ClinicalInsights = () => {
           transition={{ duration: 0.8 }}
           className="mt-16 w-full flex justify-center"
         >
-          <div className="relative w-full max-w-5xl rounded-[32px] overflow-hidden border border-white/10 shadow-2xl bg-zinc-950/40 p-4">
+          <div className="relative w-full max-w-full rounded-[32px] overflow-hidden border border-white/10 shadow-2xl bg-zinc-950/40 p-4">
             <img 
               src={home2Img} 
               alt="Ecosystem Connectivity and Central Spine Architecture" 
