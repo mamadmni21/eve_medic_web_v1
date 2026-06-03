@@ -141,7 +141,6 @@ export const ProblemSolution = () => {
                   <AlertCircle size={18} />
                 </div>
               </div>
-              <span className="uppercase tracking-widest">Silo A ➔ Mismatch ➔ Silo B</span>
             </div>
           </motion.div>
 
@@ -188,7 +187,6 @@ export const ProblemSolution = () => {
                   <ShieldCheck size={18} />
                 </div>
               </div>
-              <span className="uppercase tracking-widest text-indigo-400">EVE Spine Unified Record Active</span>
             </div>
           </motion.div>
 
