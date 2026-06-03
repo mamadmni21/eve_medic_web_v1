@@ -94,23 +94,6 @@ export const Navbar = ({ onSendMessage, currentPage, onNavigate }: NavbarProps) 
           </g>
         </svg>
       )
-    },
-    {
-      code: "zh",
-      label: "Chinese",
-      flag: (
-        <svg className="w-5 h-5 rounded-full object-cover shrink-0 border border-white/20" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <clipPath id="zh-clip"><circle cx="15" cy="15" r="15"/></clipPath>
-          <g clipPath="url(#zh-clip)">
-            <rect width="30" height="30" fill="#EE1C25"/>
-            <polygon points="7.5,9 6,4.5 10.5,6.7 4.5,6.7 9,4.5" fill="#FFFF00"/>
-            <polygon points="13.5,3.75 12.3,4.95 12.45,3.3 13.5,3 12.6,2.7" fill="#FFFF00"/>
-            <polygon points="15.75,6 14.4,6.9 14.85,5.25 15.9,4.5 15,4.2" fill="#FFFF00"/>
-            <polygon points="15.75,9.75 14.4,10.2 15,8.55 15.9,8.1 15.15,7.8" fill="#FFFF00"/>
-            <polygon points="13.5,12 12.15,12.15 12.9,10.65 13.65,9.9 12.75,9.6" fill="#FFFF00"/>
-          </g>
-        </svg>
-      )
     }
   ];
 
