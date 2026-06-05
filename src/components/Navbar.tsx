@@ -39,62 +39,9 @@ export const Navbar = ({ onSendMessage, currentPage, onNavigate }: NavbarProps) 
   };
 
   const languages = [
-    {
-      code: "en",
-      label: "English",
-      flag: (
-        <svg className="w-5 h-5 rounded-full object-cover shrink-0 border border-white/20" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <clipPath id="en-clip"><circle cx="15" cy="15" r="15"/></clipPath>
-          <g clipPath="url(#en-clip)">
-            <rect width="30" height="30" fill="#012169"/>
-            <path d="M0 0L30 30M30 0L0 30" stroke="#fff" strokeWidth="3"/>
-            <path d="M0 0L30 30M30 0L0 30" stroke="#C8102E" strokeWidth="2"/>
-            <path d="M15 0V30M0 15H30" stroke="#fff" strokeWidth="5"/>
-            <path d="M15 0V30M0 15H30" stroke="#C8102E" strokeWidth="3"/>
-          </g>
-        </svg>
-      )
-    },
-    {
-      code: "ms",
-      label: "Malaysia",
-      flag: (
-        <svg className="w-5 h-5 rounded-full object-cover shrink-0 border border-white/20" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <clipPath id="ms-clip"><circle cx="15" cy="15" r="15"/></clipPath>
-          <g clipPath="url(#ms-clip)">
-            <rect width="30" height="30" fill="#fff"/>
-            {/* 14 Stripes */}
-            <rect width="30" height="2.14" fill="#C8102E"/>
-            <rect y="4.28" width="30" height="2.14" fill="#C8102E"/>
-            <rect y="8.56" width="30" height="2.14" fill="#C8102E"/>
-            <rect y="12.84" width="30" height="2.14" fill="#C8102E"/>
-            <rect y="17.12" width="30" height="2.14" fill="#C8102E"/>
-            <rect y="21.4" width="30" height="2.14" fill="#C8102E"/>
-            <rect y="25.68" width="30" height="2.14" fill="#C8102E"/>
-            {/* Canton */}
-            <rect width="15" height="15" fill="#012169"/>
-            {/* Crescent */}
-            <circle cx="6.5" cy="7.5" r="4.5" fill="#FFC72C"/>
-            <circle cx="8" cy="7.5" r="4.5" fill="#012169"/>
-            {/* Star simplified */}
-            <polygon points="11,7.5 10,6.5 11.5,5.5 10,5.3 10.5,3.9 9.1,4.6 9,3.2 8,4.3 7.1,3.2 7,4.6 5.6,3.9 6.1,5.3 4.6,5.5 5.9,6.5" fill="#FFC72C"/>
-          </g>
-        </svg>
-      )
-    },
-    {
-      code: "id",
-      label: "Indonesia",
-      flag: (
-        <svg className="w-5 h-5 rounded-full object-cover shrink-0 border border-white/20" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <clipPath id="id-clip"><circle cx="15" cy="15" r="15"/></clipPath>
-          <g clipPath="url(#id-clip)">
-            <rect width="30" height="15" fill="#C8102E"/>
-            <rect y="15" width="30" height="15" fill="#FFFFFF"/>
-          </g>
-        </svg>
-      )
-    }
+    { code: "en", label: "EN" },
+    { code: "ms", label: "MY" },
+    { code: "id", label: "ID" }
   ];
 
   return (
@@ -143,16 +90,20 @@ export const Navbar = ({ onSendMessage, currentPage, onNavigate }: NavbarProps) 
             );
           })}
 
-          {/* Inline Flags Multi Language Selector */}
+          {/* Text-based Multi Language Selector */}
           <div className="flex items-center gap-1 bg-white/5 border border-white/10 rounded-full p-1">
             {languages.map((lang) => (
               <button
                 key={lang.code}
                 onClick={() => setLanguage(lang.code as any)}
                 title={lang.label}
-                className={`relative p-1 rounded-full transition-all flex items-center justify-center hover:scale-110 active:scale-95 ${language === lang.code ? 'bg-indigo-600 ring-2 ring-indigo-400 border-indigo-400 scale-105' : 'opacity-70 hover:opacity-100'}`}
+                className={`text-xs font-mono font-extrabold px-3 py-1.5 rounded-full transition-all flex items-center justify-center hover:scale-105 active:scale-95 ${
+                  language === lang.code 
+                    ? 'bg-indigo-600 text-white shadow-md' 
+                    : 'text-gray-400 hover:text-white'
+                }`}
               >
-                {lang.flag}
+                {lang.label}
               </button>
             ))}
           </div>
@@ -168,16 +119,20 @@ export const Navbar = ({ onSendMessage, currentPage, onNavigate }: NavbarProps) 
 
         {/* Mobile Toggle & Mobile Flags display */}
         <div className="flex items-center gap-4 md:hidden">
-          {/* Flag Toggle for Mobile bar */}
-          <div className="flex items-center gap-1.5 bg-white/5 border border-white/10 rounded-full p-1">
+          {/* Text-based Language Selector for Mobile bar */}
+          <div className="flex items-center gap-1 bg-white/5 border border-white/10 rounded-full p-1">
             {languages.map((lang) => (
               <button
                 key={lang.code}
                 onClick={() => setLanguage(lang.code as any)}
                 title={lang.label}
-                className={`relative p-1 rounded-full transition-all ${language === lang.code ? 'bg-indigo-600 ring-2 ring-indigo-400 opacity-100' : 'opacity-50'}`}
+                className={`text-[10px] font-mono font-extrabold px-2.5 py-1.5 rounded-full transition-all flex items-center justify-center ${
+                  language === lang.code 
+                    ? 'bg-indigo-600 text-white shadow-md' 
+                    : 'text-gray-500 hover:text-white'
+                }`}
               >
-                {lang.flag}
+                {lang.label}
               </button>
             ))}
           </div>
