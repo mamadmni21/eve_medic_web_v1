@@ -1,6 +1,10 @@
 import { motion } from "motion/react";
 import { AlertCircle, ArrowRight, Database, Network, ShieldCheck, Sparkles } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
+// @ts-ignore
+import home3Img from "../assets/images/home/home_3.png";
+// @ts-ignore
+import home4Img from "../assets/images/home/home_4.png";
 
 export const ProblemSolution = () => {
   const { language } = useLanguage();
@@ -131,15 +135,20 @@ export const ProblemSolution = () => {
               </p>
             </div>
 
-            {/* Visual Icon Grid representation of locked database silos */}
-            <div className="mt-8 pt-8 border-t border-white/5 flex items-center gap-4 text-xs font-bold font-mono text-gray-500">
-              <div className="flex gap-2.5">
-                <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-red-500/60 group-hover:text-red-500 transition-colors">
-                  <Database size={18} />
-                </div>
-                <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-red-500/40 opacity-50">
-                  <AlertCircle size={18} />
-                </div>
+            {/* Visual Diagram representing Fragmented Clinical Data */}
+            <div className="mt-8 rounded-2xl overflow-hidden border border-white/10 bg-zinc-950/40 p-3 shadow-2xl relative">
+              <img 
+                src={home3Img} 
+                alt="Fragmented Clinical Data" 
+                className="w-full h-auto object-cover rounded-xl opacity-90 group-hover:opacity-100 transition-all duration-500"
+                referrerPolicy="no-referrer"
+                onError={(e) => {
+                  console.error("Failed to load home_3 image");
+                }}
+              />
+              <div className="absolute top-5 left-5 bg-red-500/20 border border-red-500/30 text-red-400 rounded-full px-2.5 py-0.5 text-[8px] font-mono font-black tracking-widest uppercase flex items-center gap-1.5 backdrop-blur-md">
+                <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse" />
+                Fragmented Ingestion Silos
               </div>
             </div>
           </motion.div>
@@ -177,15 +186,20 @@ export const ProblemSolution = () => {
               </p>
             </div>
 
-            {/* Visual network graph representation for unified record */}
-            <div className="mt-8 pt-8 border-t border-white/5 flex items-center gap-4 text-xs font-bold font-mono text-gray-500">
-              <div className="flex gap-2.5">
-                <div className="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400">
-                  <Network size={18} className="animate-pulse" />
-                </div>
-                <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
-                  <ShieldCheck size={18} />
-                </div>
+            {/* Visual Diagram representing Longitudinal Data Spine */}
+            <div className="mt-8 rounded-2xl overflow-hidden border border-white/10 bg-zinc-950/40 p-3 shadow-2xl relative">
+              <img 
+                src={home4Img} 
+                alt="Longitudinal Data Spine" 
+                className="w-full h-auto object-cover rounded-xl opacity-90 group-hover:opacity-100 transition-all duration-500"
+                referrerPolicy="no-referrer"
+                onError={(e) => {
+                  console.error("Failed to load home_4 image");
+                }}
+              />
+              <div className="absolute top-5 left-5 bg-indigo-500/20 border border-indigo-500/30 text-indigo-400 rounded-full px-2.5 py-0.5 text-[8px] font-mono font-black tracking-widest uppercase flex items-center gap-1.5 backdrop-blur-md">
+                <span className="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-pulse" />
+                Unified Spine Network Connected
               </div>
             </div>
           </motion.div>
