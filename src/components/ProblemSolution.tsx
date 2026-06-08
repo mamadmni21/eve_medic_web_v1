@@ -136,17 +136,17 @@ export const ProblemSolution = () => {
             </div>
 
             {/* Visual Diagram representing Fragmented Clinical Data */}
-            <div className="mt-8 rounded-2xl overflow-hidden border border-white/10 bg-zinc-950/40 p-3 shadow-2xl relative">
+            <div className="mt-8 rounded-2xl overflow-hidden border border-white/10 bg-zinc-950/40 p-3 shadow-2xl relative flex justify-center items-center min-h-[140px]">
               <img 
                 src={home3Img} 
                 alt="Fragmented Clinical Data" 
-                className="w-full h-auto object-cover rounded-xl opacity-90 group-hover:opacity-100 transition-all duration-500"
+                className="w-[300px] h-[300px] object-cover rounded-xl opacity-90 group-hover:opacity-100 transition-all duration-500"
                 referrerPolicy="no-referrer"
                 onError={(e) => {
                   console.error("Failed to load home_3 image");
                 }}
               />
-              <div className="absolute top-5 left-5 bg-red-500/20 border border-red-500/30 text-red-400 rounded-full px-2.5 py-0.5 text-[8px] font-mono font-black tracking-widest uppercase flex items-center gap-1.5 backdrop-blur-md">
+              <div className="absolute top-3 left-3 bg-red-500/20 border border-red-500/30 text-red-400 rounded-full px-2 py-0.5 text-[8px] font-mono font-black tracking-widest uppercase flex items-center gap-1.5 backdrop-blur-md">
                 <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse" />
                 Fragmented Ingestion Silos
               </div>
@@ -187,17 +187,17 @@ export const ProblemSolution = () => {
             </div>
 
             {/* Visual Diagram representing Longitudinal Data Spine */}
-            <div className="mt-8 rounded-2xl overflow-hidden border border-white/10 bg-zinc-950/40 p-3 shadow-2xl relative">
+            <div className="mt-8 rounded-2xl overflow-hidden border border-white/10 bg-zinc-950/40 p-3 shadow-2xl relative flex justify-center items-center min-h-[140px]">
               <img 
                 src={home4Img} 
                 alt="Longitudinal Data Spine" 
-                className="w-full h-auto object-cover rounded-xl opacity-90 group-hover:opacity-100 transition-all duration-500"
+                className="w-[300px] h-[300px] object-cover rounded-xl opacity-90 group-hover:opacity-100 transition-all duration-500"
                 referrerPolicy="no-referrer"
                 onError={(e) => {
                   console.error("Failed to load home_4 image");
                 }}
               />
-              <div className="absolute top-5 left-5 bg-indigo-500/20 border border-indigo-500/30 text-indigo-400 rounded-full px-2.5 py-0.5 text-[8px] font-mono font-black tracking-widest uppercase flex items-center gap-1.5 backdrop-blur-md">
+              <div className="absolute top-3 left-3 bg-indigo-500/20 border border-indigo-500/30 text-indigo-400 rounded-full px-2 py-0.5 text-[8px] font-mono font-black tracking-widest uppercase flex items-center gap-1.5 backdrop-blur-md">
                 <span className="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-pulse" />
                 Unified Spine Network Connected
               </div>

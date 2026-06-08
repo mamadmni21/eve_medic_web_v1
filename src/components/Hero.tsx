@@ -18,7 +18,7 @@ export const Hero = ({ onSendMessage, onNavigate }: HeroProps) => {
   return (
     <section 
       id={SECTIONS.HOME}
-      className="relative min-h-screen flex items-center justify-center pt-20 px-6 overflow-hidden bg-black"
+      className="relative min-h-screen flex flex-col items-center justify-center pt-28 pb-16 px-6 overflow-hidden bg-black"
     >
       {/* Animated Background Gradients */}
       <div className="absolute inset-0 z-0">
@@ -88,21 +88,21 @@ export const Hero = ({ onSendMessage, onNavigate }: HeroProps) => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1, duration: 1 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 md:flex hidden items-center gap-12 text-white/40"
+        className="relative z-10 flex items-center justify-center gap-6 md:gap-12 text-white/40 mt-16 md:mt-24 w-full"
       >
         <div className="flex flex-col items-center">
-          <span className="text-2xl font-bold text-white">99%</span>
-          <span className="text-[10px] uppercase tracking-widest font-bold">{t.hero.accuracy}</span>
+          <span className="text-xl md:text-2xl font-bold text-white">99%</span>
+          <span className="text-[9px] md:text-[10px] uppercase tracking-widest font-bold text-center">{t.hero.accuracy}</span>
         </div>
         <div className="w-[1px] h-8 bg-white/10" />
         <div className="flex flex-col items-center">
-          <span className="text-2xl font-bold text-white">24/7</span>
-          <span className="text-[10px] uppercase tracking-widest font-bold">{t.hero.support}</span>
+          <span className="text-xl md:text-2xl font-bold text-white">24/7</span>
+          <span className="text-[9px] md:text-[10px] uppercase tracking-widest font-bold text-center">{t.hero.support}</span>
         </div>
         <div className="w-[1px] h-8 bg-white/10" />
         <div className="flex flex-col items-center">
-          <span className="text-2xl font-bold text-white">50k+</span>
-          <span className="text-[10px] uppercase tracking-widest font-bold">{t.hero.patients}</span>
+          <span className="text-xl md:text-2xl font-bold text-white">50k+</span>
+          <span className="text-[9px] md:text-[10px] uppercase tracking-widest font-bold text-center">{t.hero.patients}</span>
         </div>
       </motion.div>
     </section>
