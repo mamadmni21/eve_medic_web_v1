@@ -8,7 +8,9 @@ import home4Img from "../assets/images/home/home_4.png";
 
 export const ProblemSolution = () => {
   const { language } = useLanguage();
-
+  
+  /* the contents edit up till text here */
+  
   const localizedContent = {
     en: {
       badge: "The Maternal Health Crisis & Innovation",
