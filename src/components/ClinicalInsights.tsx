@@ -203,6 +203,8 @@ export const ClinicalInsights = () => {
       continuityDesc: "Memungkinkan proses rujukan dan penerimaan pasien secara mulus di dalam platform EVE.",
       continuityMetric: "Transfer Tanpa Hambatan Data",
 
+      /* sample comments */
+
       dataTitle: "Pipa Data Hub Klinis",
       dataSubtitle: "Pelajari bagaimana data masuk, diamankan melalui izin otorisasi yang jelas, hingga tersaji di panel pemantauan dokter.",
 
