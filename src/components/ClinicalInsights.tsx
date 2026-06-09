@@ -56,17 +56,17 @@ export const ClinicalInsights = () => {
 
       // Risk Mitigation Text
       mitigationTitle: "Proactive Risk Mitigation",
-      mitigationDesc: "EVE analyzes incoming maternal telemetry and historical snapshots, flagging potential threats like preeclampsia signs or anomalous cardiovascular values. Providers receive notifications prior to escalation, preventing critical delays.",
+      mitigationDesc: "Access comprehensive history (allergies, prior complications, genetic markers) instantly to reduce clinical error.",
       mitigationMetric: "99.4% Alert Accuracy",
 
       // Workflow Optimization Text
       optimizationTitle: "Algorithmic Workflow Optimization",
-      optimizationDesc: "By automating cross-institutional data reconciliation and removing redundant clinical questionnaires, EVE relieves cognitive fatigue from nurses and practitioners. Save up to 14.5 minutes per patient intake.",
+      optimizationDesc: "Spend less time chasing paper records and more time on high-value clinical intervention.",
       optimizationMetric: "45% Intake Time Saved",
 
       // Continuity of Care Text
       continuityTitle: "Seamless Continuity of Care",
-      continuityDesc: "Whether transferring care from a maternal clinic to a tertiary hospital during live labor, EVE maintains a single, uncorrupted clinical spine, ensuring every specialist accessing the patient possesses identical medical insight.",
+      continuityDesc: "Seamlessly hand off or receive patients within the EVE platform.",
       continuityMetric: "Zero Data Gap Transfers",
 
       // Section 2: Interactive Data Orchestration
