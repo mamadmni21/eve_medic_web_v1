@@ -124,18 +124,18 @@ export const ClinicalInsights = () => {
       
       mitigationLabel: "Pengurangan Risiko",
       optimizationLabel: "Pengoptimuman Aliran Kerja",
-      continuityLabel: "Kelangsungan Penjagaan",
+      continuityLabel: "Kesinambungan Penjagaan",
 
       mitigationTitle: "Pengurangan Risiko Proaktif",
-      mitigationDesc: "EVE menganalisis telemetri marian yang masuk dan rekod sejarah terdahulu, menandakan potensi ancaman seperti tanda preeklampsia atau nilai kardiovaskular luar biasa. Penyedia penjagaan kesihatan dimaklumkan sebelum keadaan kritikal berlaku.",
+      mitigationDesc: "Akses kepada sejarah klinikal yang lengkap (alahan, komplikasi terdahulu, penanda genetik) dengan cepat untuk mengurangkan ralat klinikal.",
       mitigationMetric: "Akurasi Amaran 99.4%",
 
       optimizationTitle: "Pengoptimuman Kerja Berasaskan Algoritma",
-      optimizationDesc: "Dengan mengautomasikan penyelarasan data merentas institusi yang terputus, EVE melegakan keletihan kognitif daripada jururawat dan pengamal perubatan. Menjimatkan masa penerimaan pesakit.",
+      optimizationDesc: "Mengurangkan masa yang dihabiskan untuk mencari rekod berasaskan kertas dan boleh tumpukan lebih banyak masa untuk intervensi klinikal.",
       optimizationMetric: "45% Penjimatan Masa",
 
-      continuityTitle: "Kelangsungan Penjagaan Yang Lancar",
-      continuityDesc: "Sama ada memindahkan penjagaan daripada klinik ibu bersalin ke hospital tertiari semasa bersalin, EVE mengekalkan tulang belakang klinikal tunggal, memastikan setiap pakar mempunyai maklumat yang serupa.",
+      continuityTitle: "Kesinambungan Penjagaan Yang Lancar",
+      continuityDesc: "Memudahkan proses pemindahan atau penerimaan pesakit secara lancar dalam platform EVE.",
       continuityMetric: "Pemindahan Tanpa Jurang Data",
 
       dataTitle: "Saluran Saluran Data Hab Klinikal",
@@ -192,15 +192,15 @@ export const ClinicalInsights = () => {
       continuityLabel: "Kontinuitas Perawatan",
 
       mitigationTitle: "Mitigasi Risiko Proaktif",
-      mitigationDesc: "EVE menganalisis telemetri ibu melahirkan dan riwayat klinis secara real-time, menandai potensi ancaman seperti tanda preeklampsia atau denyut jantung janin anomali. Dokter menerima peringatan sebelum eskalasi risiko terjadi.",
+      mitigationDesc: "Akses riwayat klinis yang lengkap (alergi, komplikasi sebelumnya, penanda genetik) untuk mengurangi kesalahan klinis secara langsung.",
       mitigationMetric: "Akurasi Peringatan 99.4%",
 
       optimizationTitle: "Optimalisasi Alur Kerja Algoritmik",
-      optimizationDesc: "Dengan mengotomatiskan rekonsiliasi data lintas institusi, EVE membebaskan perawat dan praktisi medis dari kelelahan administratif. Mengurangi waktu pemeriksaan hingga 14.5 menit per pasien.",
+      optimizationDesc: "Kurangi waktu yang dihabiskan untuk mencari rekam medis berbasis kertas dan fokus lebih banyak pada intervensi klinis yang bernilai tinggi.",
       optimizationMetric: "45% Waktu Hemat",
 
       continuityTitle: "Kontinuitas Perawatan yang Sempurna",
-      continuityDesc: "Saat perpindahan pasien dari klinik bersalin lokal ke rumah sakit rujukan darurat, EVE mempertahankan satu tulang punggung klinis yang utuh, memastikan setiap dokter melihat data medis yang sama persis.",
+      continuityDesc: "Memungkinkan proses rujukan dan penerimaan pasien secara mulus di dalam platform EVE.",
       continuityMetric: "Transfer Tanpa Hambatan Data",
 
       dataTitle: "Pipa Data Hub Klinis",
