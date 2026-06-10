@@ -631,14 +631,14 @@ export const About = () => {
                 <div className="w-20 h-20 rounded-2xl overflow-hidden border border-white/10 bg-zinc-950/60 flex items-center justify-center p-3 mb-4 group-hover:border-emerald-500/40 transition-colors shadow-lg">
                   <img 
                     src={about13Img} 
-                    alt="ECOSYSTEM ANCHORS" 
+                    alt="3. ECOSYSTEM ANCHORS" 
                     className="w-full h-full object-contain opacity-80 group-hover:opacity-100 transition-all duration-300"
                     referrerPolicy="no-referrer"
                     onError={(e) => console.error("Failed to load about_13 image")}
                   />
                 </div>
                 <h4 className="text-lg font-black text-white mb-2 leading-snug tracking-tight">
-                  ECOSYSTEM ANCHORS
+                  3. ECOSYSTEM ANCHORS
                 </h4>
               </div>
               <p className="text-gray-400 text-xs sm:text-sm leading-relaxed mt-2">
@@ -658,14 +658,14 @@ export const About = () => {
                 <div className="w-20 h-20 rounded-2xl overflow-hidden border border-white/10 bg-zinc-950/60 flex items-center justify-center p-3 mb-4 group-hover:border-emerald-500/40 transition-colors shadow-lg">
                   <img 
                     src={about14Img} 
-                    alt="VERIFIED OUTCOMES" 
+                    alt="4. VERIFIED OUTCOMES" 
                     className="w-full h-full object-contain opacity-80 group-hover:opacity-100 transition-all duration-300"
                     referrerPolicy="no-referrer"
                     onError={(e) => console.error("Failed to load about_14 image")}
                   />
                 </div>
                 <h4 className="text-lg font-black text-white mb-2 leading-snug tracking-tight">
-                  VERIFIED OUTCOMES
+                  4. VERIFIED OUTCOMES
                 </h4>
               </div>
               <p className="text-gray-400 text-xs sm:text-sm leading-relaxed mt-2">
