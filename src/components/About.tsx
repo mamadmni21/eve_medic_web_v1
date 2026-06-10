@@ -61,14 +61,14 @@ export const About = () => {
               <div className="text-[11px] sm:text-xs font-black tracking-widest text-indigo-400 uppercase font-mono py-2 px-3 sm:py-0 sm:px-0 bg-indigo-950/30 border border-indigo-500/20 rounded-xl sm:bg-transparent sm:border-0 text-center sm:text-right sm:border-r sm:border-white/10 sm:pr-4 border-dashed leading-relaxed shrink-0">
                 CLINICAL<br />
                 NECESSITY<br />
-                (Trust)
+                (Truth)
               </div>
 
               {/* Center: Image */}
               <div className="relative flex-1 max-w-sm w-full rounded-[32px] overflow-hidden border border-white/10 shadow-2xl bg-zinc-950/40 p-4 group">
                 <img 
                   src={about0Img} 
-                  alt="Clinical Necessity (Trust) and Systemic Execution (Scale)" 
+                  alt="Clinical Necessity (Truth) and Systemic Execution (Scale)" 
                   className="w-full h-auto object-cover rounded-2xl opacity-90 group-hover:opacity-100 transition-all duration-500 pointer-events-none"
                   referrerPolicy="no-referrer"
                   onError={(e) => {
@@ -153,13 +153,13 @@ export const About = () => {
             </div>
 
             <p className="text-gray-400 text-sm leading-relaxed mb-8 flex-grow">
-              With decades in clinical practice, Dr. Arifah Hamim witnessed firsthand how vital healthcare information is frequently lost in transition between disconnected maternal healthcare providers. She ensures EVE is rooted in clinical utility and unwavering medical safety.
+              With decades in maternal and fertility care, Dr. Arifah Hamim brings deep clinical expertise and first-hand experience of the risks caused by fragmented patient histories. She ensures EVE is grounded in real clinical needs and patients safety.
             </p>
 
             {/* Box Quote */}
             <div className="mt-auto bg-indigo-950/20 border-l-4 border-indigo-500 rounded-r-2xl p-5 bg-gradient-to-r from-indigo-950/10 to-transparent">
               <p className="text-indigo-200 text-xs md:text-sm font-medium italic leading-relaxed">
-                "A woman's health history shouldn't depend on her ability to remember it under stress."
+                "A woman's health history shouldn't depend on her memory or a piece of paper. My focus now is ensuring that the 'clinical blind spot' becomes a thing of the past, so that every clinician has the full context they need to provide safe, dignified care."
               </p>
             </div>
           </motion.div>
@@ -205,13 +205,13 @@ export const About = () => {
             </div>
 
             <p className="text-gray-400 text-sm leading-relaxed mb-8 flex-grow">
-              Ainil brings expertise in systems and networks, connecting disparate platforms into a cohesive operational spine. She builds the integration bridges that scale this technology to seamlessly connect clinical databases and ecosystems.
+              Ainil brings expertise in systems and networks, mobilizing partners and institutions to turn the vision of EVE into real-world impact. She builds the bridges that allow EVE to scale and endure.
             </p>
 
             {/* Box Quote */}
             <div className="mt-auto bg-emerald-950/20 border-l-4 border-emerald-500 rounded-r-2xl p-5 bg-gradient-to-r from-emerald-950/10 to-transparent">
               <p className="text-emerald-200 text-xs md:text-sm font-medium italic leading-relaxed">
-                "Scaling EVE isn't just about software—it is about designing the institutional bridges that build absolute systemic trust."
+                "Scaling EVE isn't just about growth; it's about mobilizing an entire ecosystem. We are converging clinicians, hospitals, and partners into a unified infrastructure to eliminate clinical blind spots at scale."
               </p>
             </div>
           </motion.div>
@@ -225,7 +225,7 @@ export const About = () => {
             The Architecture behind EVE
           </h4>
           <h3 className="text-3xl md:text-4.5xl font-black text-white tracking-tighter uppercase text-center max-w-4xl mx-auto leading-[1.15]">
-            A trusted Digital record Built for Continuity, privacy and impact.
+            A trusted digital record built for continuity, privacy and impact.
           </h3>
           <div className="w-16 h-1 bg-gradient-to-r from-indigo-500 to-emerald-500 mx-auto mt-5 rounded-full" />
         </div>
@@ -258,18 +258,18 @@ export const About = () => {
               <div className="w-20 h-20 rounded-2xl overflow-hidden border border-white/10 bg-zinc-950/60 flex items-center justify-center p-3 mb-4 group-hover:border-indigo-500/40 transition-colors shadow-lg">
                 <img 
                   src={about3Img} 
-                  alt="Data Capture" 
+                  alt="DATA CAPTURE" 
                   className="w-full h-full object-contain opacity-80 group-hover:opacity-100 transition-all duration-300"
                   referrerPolicy="no-referrer"
                   onError={(e) => console.error("Failed to load about_3 image")}
                 />
               </div>
               <h4 className="text-lg font-black text-white mb-2 leading-snug tracking-tight">
-                Data Capture
+                DATA CAPTURE
               </h4>
             </div>
             <p className="text-gray-400 text-xs sm:text-sm leading-relaxed mt-2">
-              Structured clinical data captured at every meaningful touch-point.
+              Structured clinical data captured at every meaningful touchpoint.
             </p>
           </motion.div>
 
@@ -299,14 +299,14 @@ export const About = () => {
               <div className="w-20 h-20 flex items-center justify-center mb-4 group-hover:scale-105 transition-transform duration-300">
                 <img 
                   src={about4Img} 
-                  alt="Arrow: Standardization & validation" 
+                  alt="Arrow: STANDARDIZATION & VALIDATION" 
                   className="w-14 h-14 object-contain opacity-70 group-hover:opacity-100 transition-opacity"
                   referrerPolicy="no-referrer"
                   onError={(e) => console.error("Failed to load about_4 image")}
                 />
               </div>
               <h4 className="text-lg font-black text-white mb-2 leading-snug tracking-tight">
-                Standardization & validation
+                STANDARDIZATION & VALIDATION
               </h4>
             </div>
             <p className="text-gray-400 text-xs sm:text-sm leading-relaxed mt-2 font-light">
@@ -342,7 +342,7 @@ export const About = () => {
               <div className="w-20 h-20 rounded-2xl overflow-hidden border border-indigo-500/30 bg-zinc-950/60 flex items-center justify-center p-3 mb-4 ring-2 ring-indigo-500/10 group-hover:ring-indigo-500/30 transition-all shadow-lg">
                 <img 
                   src={eveLogoImg} 
-                  alt="Trusted Digital Record" 
+                  alt="TRUSTED DIGITAL RECORD" 
                   className="w-full h-full object-contain opacity-90 group-hover:opacity-100 transition-all duration-300"
                   referrerPolicy="no-referrer"
                   onError={(e) => console.error("Failed to load eve_logo image")}
@@ -352,11 +352,11 @@ export const About = () => {
                 Central Ledger
               </span>
               <h4 className="text-lg font-black text-white mb-2 leading-snug tracking-tight">
-                Trusted Digital Record
+                TRUSTED DIGITAL RECORD
               </h4>
             </div>
             <p className="text-indigo-200/70 text-xs sm:text-sm leading-relaxed mt-2 z-10">
-              The continuous, verifiable health timeline verifying true clinical records across all care environments.
+    
             </p>
           </motion.div>
 
@@ -386,14 +386,14 @@ export const About = () => {
               <div className="w-20 h-20 flex items-center justify-center mb-4 group-hover:scale-105 transition-transform duration-300">
                 <img 
                   src={about5Img} 
-                  alt="Arrow: Secure Interoperability" 
+                  alt="Arrow: SECURE INTEROPERABILITY" 
                   className="w-14 h-14 object-contain opacity-70 group-hover:opacity-100 transition-opacity"
                   referrerPolicy="no-referrer"
                   onError={(e) => console.error("Failed to load about_5 image")}
                 />
               </div>
               <h4 className="text-lg font-black text-white mb-2 leading-snug tracking-tight">
-                Secure Interoperability
+                SECURE INTEROPERABILITY
               </h4>
             </div>
             <p className="text-gray-400 text-xs sm:text-sm leading-relaxed mt-2 font-light">
@@ -413,14 +413,14 @@ export const About = () => {
               <div className="w-20 h-20 rounded-2xl overflow-hidden border border-white/10 bg-zinc-950/60 flex items-center justify-center p-3 mb-4 group-hover:border-emerald-500/40 transition-colors shadow-lg">
                 <img 
                   src={about6Img} 
-                  alt="Verified Outcomes" 
+                  alt="VERIFIED OUTCOMES" 
                   className="w-full h-full object-contain opacity-80 group-hover:opacity-100 transition-all duration-300"
                   referrerPolicy="no-referrer"
                   onError={(e) => console.error("Failed to load about_6 image")}
                 />
               </div>
               <h4 className="text-lg font-black text-white mb-2 leading-snug tracking-tight">
-                Verified Outcomes
+                VERIFIED OUTCOMES
               </h4>
             </div>
             <p className="text-gray-400 text-xs sm:text-sm leading-relaxed mt-2">
@@ -454,14 +454,14 @@ export const About = () => {
                 <div className="w-20 h-20 rounded-2xl overflow-hidden border border-white/10 bg-zinc-950/60 flex items-center justify-center p-3 mb-4 group-hover:border-indigo-500/40 transition-colors shadow-lg">
                   <img 
                     src={about7Img} 
-                    alt="Privacy by Design" 
+                    alt="PRIVACY BY DESIGN" 
                     className="w-full h-full object-contain opacity-80 group-hover:opacity-100 transition-all duration-300"
                     referrerPolicy="no-referrer"
                     onError={(e) => console.error("Failed to load about_7 image")}
                   />
                 </div>
                 <h4 className="text-lg font-black text-white mb-2 leading-snug tracking-tight animate-none">
-                  Privacy by Design
+                  PRIVACY BY DESIGN
                 </h4>
               </div>
               <p className="text-gray-400 text-xs sm:text-sm leading-relaxed mt-2">
@@ -481,14 +481,14 @@ export const About = () => {
                 <div className="w-20 h-20 rounded-2xl overflow-hidden border border-white/10 bg-zinc-950/60 flex items-center justify-center p-3 mb-4 group-hover:border-indigo-500/40 transition-colors shadow-lg">
                   <img 
                     src={about8Img} 
-                    alt="Clinically Governed" 
+                    alt="CLINICALLY GOVERNED" 
                     className="w-full h-full object-contain opacity-80 group-hover:opacity-100 transition-all duration-300"
                     referrerPolicy="no-referrer"
                     onError={(e) => console.error("Failed to load about_8 image")}
                   />
                 </div>
                 <h4 className="text-lg font-black text-white mb-2 leading-snug tracking-tight">
-                  Clinically Governed
+                  CLINICALLY GOVERNED
                 </h4>
               </div>
               <p className="text-gray-400 text-xs sm:text-sm leading-relaxed mt-2">
@@ -508,14 +508,14 @@ export const About = () => {
                 <div className="w-20 h-20 rounded-2xl overflow-hidden border border-white/10 bg-zinc-950/60 flex items-center justify-center p-3 mb-4 group-hover:border-emerald-500/40 transition-colors shadow-lg">
                   <img 
                     src={about9Img} 
-                    alt="Ecosystem Connected" 
+                    alt="ECOSYSTEM CONNECTED" 
                     className="w-full h-full object-contain opacity-80 group-hover:opacity-100 transition-all duration-300"
                     referrerPolicy="no-referrer"
                     onError={(e) => console.error("Failed to load about_9 image")}
                   />
                 </div>
                 <h4 className="text-lg font-black text-white mb-2 leading-snug tracking-tight">
-                  Ecosystem Connected
+                  ECOSYSTEM CONNECTED
                 </h4>
               </div>
               <p className="text-gray-400 text-xs sm:text-sm leading-relaxed mt-2">
@@ -535,14 +535,14 @@ export const About = () => {
                 <div className="w-20 h-20 rounded-2xl overflow-hidden border border-white/10 bg-zinc-950/60 flex items-center justify-center p-3 mb-4 group-hover:border-emerald-500/40 transition-colors shadow-lg">
                   <img 
                     src={about10Img} 
-                    alt="Outcome Focused" 
+                    alt="OUTCOME FOCUSED" 
                     className="w-full h-full object-contain opacity-80 group-hover:opacity-100 transition-all duration-300"
                     referrerPolicy="no-referrer"
                     onError={(e) => console.error("Failed to load about_10 image")}
                   />
                 </div>
                 <h4 className="text-lg font-black text-white mb-2 leading-snug tracking-tight">
-                  Outcome Focused
+                  OUTCOME FOCUSED
                 </h4>
               </div>
               <p className="text-gray-400 text-xs sm:text-sm leading-relaxed mt-2">
@@ -577,18 +577,18 @@ export const About = () => {
                 <div className="w-20 h-20 rounded-2xl overflow-hidden border border-white/10 bg-zinc-950/60 flex items-center justify-center p-3 mb-4 group-hover:border-indigo-500/40 transition-colors shadow-lg">
                   <img 
                     src={about11Img} 
-                    alt="1. Clinical Adoption" 
+                    alt="1. CLINICAL ADOPTION" 
                     className="w-full h-full object-contain opacity-80 group-hover:opacity-100 transition-all duration-300"
                     referrerPolicy="no-referrer"
                     onError={(e) => console.error("Failed to load about_11 image")}
                   />
                 </div>
                 <h4 className="text-lg font-black text-white mb-2 leading-snug tracking-tight">
-                  1. Clinical Adoption
+                  1. CLINICAL ADOPTION
                 </h4>
               </div>
               <p className="text-gray-400 text-xs sm:text-sm leading-relaxed mt-2">
-                Ensuring Doctors actively use EVE in daily consultations.
+                Ensuring doctors actively use EVE in daily consultations.
               </p>
             </motion.div>
 
@@ -604,14 +604,14 @@ export const About = () => {
                 <div className="w-20 h-20 rounded-2xl overflow-hidden border border-white/10 bg-zinc-950/60 flex items-center justify-center p-3 mb-4 group-hover:border-indigo-500/40 transition-colors shadow-lg">
                   <img 
                     src={about12Img} 
-                    alt="2. Live journey" 
+                    alt="2. LIVE JOURNEY" 
                     className="w-full h-full object-contain opacity-80 group-hover:opacity-100 transition-all duration-300"
                     referrerPolicy="no-referrer"
                     onError={(e) => console.error("Failed to load about_12 image")}
                   />
                 </div>
                 <h4 className="text-lg font-black text-white mb-2 leading-snug tracking-tight">
-                  2. Live journey
+                  2. LIVE JOURNEY
                 </h4>
               </div>
               <p className="text-gray-400 text-xs sm:text-sm leading-relaxed mt-2">
@@ -631,14 +631,14 @@ export const About = () => {
                 <div className="w-20 h-20 rounded-2xl overflow-hidden border border-white/10 bg-zinc-950/60 flex items-center justify-center p-3 mb-4 group-hover:border-emerald-500/40 transition-colors shadow-lg">
                   <img 
                     src={about13Img} 
-                    alt="Ecosystem Anchors" 
+                    alt="ECOSYSTEM ANCHORS" 
                     className="w-full h-full object-contain opacity-80 group-hover:opacity-100 transition-all duration-300"
                     referrerPolicy="no-referrer"
                     onError={(e) => console.error("Failed to load about_13 image")}
                   />
                 </div>
                 <h4 className="text-lg font-black text-white mb-2 leading-snug tracking-tight">
-                  Ecosystem Anchors
+                  ECOSYSTEM ANCHORS
                 </h4>
               </div>
               <p className="text-gray-400 text-xs sm:text-sm leading-relaxed mt-2">
@@ -658,14 +658,14 @@ export const About = () => {
                 <div className="w-20 h-20 rounded-2xl overflow-hidden border border-white/10 bg-zinc-950/60 flex items-center justify-center p-3 mb-4 group-hover:border-emerald-500/40 transition-colors shadow-lg">
                   <img 
                     src={about14Img} 
-                    alt="Verified outcomes" 
+                    alt="VERIFIED OUTCOMES" 
                     className="w-full h-full object-contain opacity-80 group-hover:opacity-100 transition-all duration-300"
                     referrerPolicy="no-referrer"
                     onError={(e) => console.error("Failed to load about_14 image")}
                   />
                 </div>
                 <h4 className="text-lg font-black text-white mb-2 leading-snug tracking-tight">
-                  Verified outcomes
+                  VERIFIED OUTCOMES
                 </h4>
               </div>
               <p className="text-gray-400 text-xs sm:text-sm leading-relaxed mt-2">
