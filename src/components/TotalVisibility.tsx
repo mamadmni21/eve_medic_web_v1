@@ -17,14 +17,14 @@ export const TotalVisibility = () => {
       phoneAlt: "EVE Patient Companion Application - Mobile Screen"
     },
     ms: {
-      title: "Satu Platform . Keterlihatan Sepenuhnya",
-      description: "Data bersepadu untuk penyedia. Akses diperkasa untuk pesakit.",
+      title: "Satu Platform . Penglihatan Sepenuhnya",
+      description: "Data bersepadu untuk penyedia. Akses diperkasakan untuk pesakit.",
       laptopAlt: "Antaramuka Papan Pemuka Penyedia EVE - Skrin Laptop",
-      phoneAlt: "Aplikasi Rakan Pesakit EVE - Skrin Telefon"
+      phoneAlt: "Rakan Aplikasi Pesakit EVE - Skrin Telefon"
     },
     id: {
       title: "Satu Platform . Visibilitas Total",
-      description: "Data terintegrasi untuk dokter & faskes. Akses mandiri bagi pasien.",
+      description: "Data terintegrasi untuk penyedia. Akses mandiri bagi pasien.",
       laptopAlt: "Antarmuka Dasbor Klinik EVE - Layar Laptop",
       phoneAlt: "Aplikasi Pendamping Pasien EVE - Layar Ponsel"
     },
