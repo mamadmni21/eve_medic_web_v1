@@ -30,6 +30,7 @@ export const Navbar = ({ onSendMessage, currentPage, onNavigate }: NavbarProps) 
     { name: t.nav.home, id: SECTIONS.HOME },
     { name: t.nav.about, id: SECTIONS.ABOUT },
     { name: t.nav.product, id: SECTIONS.PRODUCT },
+    { name: t.nav.blog, id: SECTIONS.BLOG },
     { name: t.nav.contact, id: SECTIONS.CONTACT },
   ];
 

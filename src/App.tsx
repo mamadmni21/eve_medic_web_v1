@@ -8,6 +8,7 @@ import { ProblemSolution } from "./components/ProblemSolution";
 import { ClinicalInsights } from "./components/ClinicalInsights";
 import { TotalVisibility } from "./components/TotalVisibility";
 import { PopupForm } from "./components/PopupForm";
+import { Blog } from "./components/Blog";
 import { SECTIONS } from "./constants";
 import { useLanguage } from "./context/LanguageContext";
 import { motion, AnimatePresence } from "motion/react";
@@ -27,6 +28,9 @@ export default function App() {
     }
     if (cleanPath === "product" || cleanPath === "products") {
       return SECTIONS.PRODUCT;
+    }
+    if (cleanPath === "blog") {
+      return SECTIONS.BLOG;
     }
     if (cleanPath === "contact" || cleanPath === "contact-us") {
       return SECTIONS.CONTACT;
@@ -100,6 +104,18 @@ export default function App() {
               transition={{ duration: 0.3 }}
             >
               <Product />
+            </motion.div>
+          )}
+
+          {currentPage === SECTIONS.BLOG && (
+            <motion.div
+              key="blog"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.3 }}
+            >
+              <Blog />
             </motion.div>
           )}
 

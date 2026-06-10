@@ -13,6 +13,7 @@ export interface TranslationSet {
     home: string;
     about: string;
     product: string;
+    blog: string;
     contact: string;
     sendMessage: string;
   };
@@ -131,6 +132,7 @@ export const translations: Record<Language, TranslationSet> = {
       home: "Home",
       about: "About Us",
       product: "Product",
+      blog: "Blog",
       contact: "Contact Us",
       sendMessage: "Send Message",
     },
@@ -138,6 +140,7 @@ export const translations: Record<Language, TranslationSet> = {
       badge: "Professional Medical Solutions",
       title1: "Clinical Data Infrastructure for ",
       titleAccent: "Maternal & Fertility Care",
+      title2: "",
       desc: "A foundational PaaS layer enabling seamless data liquidity and longitudinal patient records across the maternal health ecosystem.",
       exploreBtn: "Explore the Platform",
       messageBtn: "Send Message",
@@ -311,6 +314,7 @@ export const translations: Record<Language, TranslationSet> = {
       home: "Laman Utama",
       about: "Tentang Kami",
       product: "Produk",
+      blog: "Blog",
       contact: "Hubungi Kami",
       sendMessage: "Hantar Mesej",
     },
@@ -318,6 +322,7 @@ export const translations: Record<Language, TranslationSet> = {
       badge: "Penyelesaian Perubatan Profesional",
       title1: "Infrastruktur Data Klinikal untuk ",
       titleAccent: "Penjagaan Kesihatan & Kesuburan Ibu",
+      title2: "",
       desc: "Lapisan asas PaaS yang membolehkan aliran data yang lancar serta pembentukan rekod pesakit longitudinal yang berterusan sepanjang perjalanan penjagaan kesihatan ibu.",
       exploreBtn: "Terokai Platform",
       messageBtn: "Hantar Mesej",
@@ -491,6 +496,7 @@ export const translations: Record<Language, TranslationSet> = {
       home: "Beranda",
       about: "Tentang Kami",
       product: "Produk",
+      blog: "Blog",
       contact: "Hubungi Kami",
       sendMessage: "Kirim Pesan",
     },
@@ -498,6 +504,7 @@ export const translations: Record<Language, TranslationSet> = {
       badge: "Solusi Medis Profesional",
       title1: "Infrastruktur Data Klinis untuk",
       titleAccent: "Kesehatan & Fertilitas Ibu",
+      title2: "",
       desc: "Lapisan PaaS yang menjadi fondasi data yang menghubungkan setiap tahap perjalanan reproduksi perempuan melalui rekam medis longitudinal yang terintegrasi dan pertukaran data yang lancar.",
       exploreBtn: "Jelajahi Platform",
       messageBtn: "Kirim Pesan",
@@ -671,6 +678,7 @@ export const translations: Record<Language, TranslationSet> = {
       home: "首页",
       about: "关于我们",
       product: "解决方案",
+      blog: "博客",
       contact: "联系我们",
       sendMessage: "发送消息",
     },

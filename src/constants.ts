@@ -17,5 +17,6 @@ export const SECTIONS = {
   HOME: "home",
   ABOUT: "about",
   PRODUCT: "product",
+  BLOG: "blog",
   CONTACT: "contact",
 };
