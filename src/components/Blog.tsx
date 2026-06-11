@@ -59,7 +59,7 @@ export const Blog = () => {
       id: "clinical-tech",
       name: {
         en: "CLINICAL TECH & SECURITY",
-        ms: "TEK KLINIKAL & SEKURITI",
+        ms: "TEKNOLOGI KLINIKAL & SEKURITI",
         id: "TEKNOLOGI & KEAMANAN",
         zh: "临床医学技术与信息安全"
       }
@@ -86,7 +86,7 @@ export const Blog = () => {
       id: "neonatal-growth",
       name: {
         en: "NEONATAL & FETAL MILESTONES",
-        ms: "PERKEMBANGAN JANIN",
+        ms: "PERKEMBANGAN JANIN & NEONATAL",
         id: "PERKEMBANGAN JANIN & REPRODUKSI",
         zh: "胎儿脑神经发育与新生儿健康"
       }
