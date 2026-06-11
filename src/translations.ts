@@ -394,7 +394,7 @@ export const translations: Record<Language, TranslationSet> = {
     contact: {
       badge: "Hubungi Kami",
       title: "HUBUNGI KAMI.",
-      emailLabel: "E-mel",
+      emailLabel: "Alamat Emel",
       locationLabel: "Lokasi",
       locationValue: "Rangkaian Perubatan Global",
       sendBtn: "Hantar Mesej Permohonan",
