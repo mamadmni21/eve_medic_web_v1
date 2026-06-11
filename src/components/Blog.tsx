@@ -51,15 +51,17 @@ export const Blog = () => {
       name: {
         en: "ALL CATEGORIES",
         ms: "SEMUA KATEGORI",
-        id: "SEMUA KATEGORI"
+        id: "SEMUA KATEGORI",
+        zh: "全部学术文献分类"
       }
     },
     {
       id: "clinical-tech",
       name: {
         en: "CLINICAL TECH & SECURITY",
-        ms: "TEKNOLOGI KLINIKAL & SEKURITI",
-        id: "TEKNOLOGI & KEAMANAN"
+        ms: "TEK KLINIKAL & SEKURITI",
+        id: "TEKNOLOGI & KEAMANAN",
+        zh: "临床医学技术与信息安全"
       }
     },
     {
@@ -67,23 +69,26 @@ export const Blog = () => {
       name: {
         en: "MATERNAL PHYSIOLOGY",
         ms: "FISIOLOGI IBU",
-        id: "FISIOLOGI IBU HAMIL"
+        id: "FISIOLOGI IBU HAMIL",
+        zh: "孕妇与围产期母体生理学"
       }
     },
     {
       id: "labor-prep",
       name: {
         en: "LABOR & PREPARATION",
-        ms: "PERSEDIAAN BERSALIN",
-        id: "PERSALINAN & PERSIAPAN"
+        ms: "PROSES & PERSEDIAAN BERSALIN",
+        id: "PERSALINAN & PERSIAPAN",
+        zh: "心理与骨骼力学临产分娩准备"
       }
     },
     {
       id: "neonatal-growth",
       name: {
         en: "NEONATAL & FETAL MILESTONES",
-        ms: "PERKEMBANGAN JANIN & NEONATAL",
-        id: "PERKEMBANGAN JANIN & REPRODUKSI"
+        ms: "PERKEMBANGAN JANIN",
+        id: "PERKEMBANGAN JANIN & REPRODUKSI",
+        zh: "胎儿脑神经发育与新生儿健康"
       }
     },
     {
@@ -91,7 +96,8 @@ export const Blog = () => {
       name: {
         en: "POSTPARTUM RECOVERY",
         ms: "PEMULIHAN SELEPAS BERSALIN",
-        id: "PEMULIHAN PASCA MELAHIRKAN"
+        id: "PEMULIHAN PASCA MELAHIRKAN",
+        zh: "黄金产褥期休整与产后复健支持"
       }
     }
   ], []);
@@ -104,7 +110,7 @@ export const Blog = () => {
       category: "clinical-tech",
       title: {
         en: "Decentralized Clinical Ledgers in Modern Obstetrics",
-        ms: "Lejar Klinikal Terdesentralisasi dalam Obstetrik Moden",
+        ms: "Lejar Klinikal Terpencar dalam Obstetrik Moden",
         id: "Buku Besar Klinis Terdesentralisasi dalam Obstetri Modern"
       },
       description: {
@@ -711,10 +717,25 @@ export const Blog = () => {
       tipsTitle: "Panduan Operasional Praktis Kehamilan:",
       noArticles: "Tidak ada dokumen analisis yang cocok dengan kategori ini.",
       allCategoriesDesc: "Melihat semua panduan kehamilan terverifikasi klinis."
+    },
+    zh: {
+      badge: "权威临床知识库",
+      title: "前沿洞察与临床解析",
+      subtitle: "致力于在孕产妇生命监护中，稳健推动临床工作流标准化、病患平权照护与数字系统高可靠性步伐。",
+      categoriesTitle: "学术与科普洞察板块分类",
+      backToBlog: "返回洞察研究列表",
+      readArticle: "查阅深度解析",
+      authorLabel: "研究学者",
+      dateLabel: "发布日期",
+      timeLabel: "建议阅读用时",
+      takeawayTitle: "核心临床医疗价值主张：",
+      tipsTitle: "循证家庭及临床实操指南：",
+      noArticles: "非常抱歉，当前暂无匹配此学术分类的存档文献与案例文件。",
+      allCategoriesDesc: "正在检索与查看所有精心编纂、经临床实证的母婴学识及孕期发展脉络。"
     }
   };
 
-  const currentLang = (language === "ms" || language === "id") ? language : "en";
+  const currentLang = (language === "ms" || language === "id" || language === "zh") ? language : "en";
   const texts = localizedText[currentLang];
 
   return (

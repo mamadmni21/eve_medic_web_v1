@@ -42,7 +42,8 @@ export const Navbar = ({ onSendMessage, currentPage, onNavigate }: NavbarProps) 
   const languages = [
     { code: "en", label: "EN" },
     { code: "ms", label: "MY" },
-    { code: "id", label: "ID" }
+    { code: "id", label: "ID" },
+    { code: "zh", label: "ZH" }
   ];
 
   return (
