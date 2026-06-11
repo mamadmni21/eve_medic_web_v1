@@ -393,12 +393,12 @@ export const translations: Record<Language, TranslationSet> = {
     },
     contact: {
       badge: "Hubungi Kami",
-      title: "HUBUNGI SIKAP KAMI.",
-      emailLabel: "Alamat E-mel",
+      title: "HUBUNGI KAMI.",
+      emailLabel: "E-mel",
       locationLabel: "Lokasi",
       locationValue: "Rangkaian Perubatan Global",
       sendBtn: "Hantar Mesej Permohonan",
-      socialTitle: "Platform Sosial",
+      socialTitle: "Media Sosial",
       officialChannels: "Saluran Rasmi EVE Medic",
     },
     popup: {
