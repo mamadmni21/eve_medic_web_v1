@@ -686,7 +686,12 @@ export const Blog = () => {
       takeawayTitle: "Clinical Value-Proposition:",
       tipsTitle: "Actionable Operational Guidelines:",
       noArticles: "No case documents currently match this category filter.",
-      allCategoriesDesc: "Reviewing all curated medical insights and pregnancy timelines."
+      allCategoriesDesc: "Reviewing all curated medical insights and pregnancy timelines.",
+      tabInsights: "Insights",
+      tabServices: "Services",
+      tabSolutions: "Solutions",
+      servicesHeading: "EVE SERVICES PORTFOLIO & SPECIFICATIONS",
+      solutionsHeading: "EVE SOLUTIONS PORTFOLIO & SPECIFICATIONS"
     },
     ms: {
       badge: "PUSAT PENGETAHUAN KLINIKAL",
@@ -701,7 +706,12 @@ export const Blog = () => {
       takeawayTitle: "Cadangan Nilai Klinikal:",
       tipsTitle: "Garis Panduan Amalan Praktikal:",
       noArticles: "Tiada dokumen klinikal padan dengan penapis kategori ini.",
-      allCategoriesDesc: "Meneliti semua wawasan perubatan kurasi dan garis masa kehamilan."
+      allCategoriesDesc: "Meneliti semua wawasan perubatan kurasi dan garis masa kehamilan.",
+      tabInsights: "Wawasan",
+      tabServices: "Perkhidmatan",
+      tabSolutions: "Penyelesaian",
+      servicesHeading: "PORTFOLIO & SPESIFIKASI PERKHIDMATAN EVE",
+      solutionsHeading: "PORTFOLIO & SPESIFIKASI PENYELESAIAN EVE"
     },
     id: {
       badge: "PUSAT ILMU PENGETAHUAN KLINIKAL",
@@ -716,7 +726,12 @@ export const Blog = () => {
       takeawayTitle: "Proposisi Nilai Klinis:",
       tipsTitle: "Panduan Operasional Praktis Kehamilan:",
       noArticles: "Tidak ada dokumen analisis yang cocok dengan kategori ini.",
-      allCategoriesDesc: "Melihat semua panduan kehamilan terverifikasi klinis."
+      allCategoriesDesc: "Melihat semua panduan kehamilan terverifikasi klinis.",
+      tabInsights: "Wawasan",
+      tabServices: "Layanan",
+      tabSolutions: "Solusi",
+      servicesHeading: "PORTOFOLIO & SPESIFIKASI LAYANAN EVE",
+      solutionsHeading: "PORTOFOLIO & SPESIFIKASI SOLUSI EVE"
     },
     zh: {
       badge: "权威临床知识库",
@@ -731,7 +746,12 @@ export const Blog = () => {
       takeawayTitle: "核心临床医疗价值主张：",
       tipsTitle: "循证家庭及临床实操指南：",
       noArticles: "非常抱歉，当前暂无匹配此学术分类的存档文献与案例文件。",
-      allCategoriesDesc: "正在检索与查看所有精心编纂、经临床实证的母婴学识及孕期发展脉络。"
+      allCategoriesDesc: "正在检索与查看所有精心编纂、经临床实证的母婴学识及孕期发展脉络。",
+      tabInsights: "临床洞察",
+      tabServices: "专业服务",
+      tabSolutions: "解决方案",
+      servicesHeading: "EVE 临床服务项目组合与技术规范编制",
+      solutionsHeading: "EVE 行业解决方案技术指标与参考范式"
     }
   };
 
@@ -768,7 +788,7 @@ export const Blog = () => {
               </div>
               <div className="flex items-center gap-1.5">
                 <User className="w-3.5 h-3.5" />
-                <span>{texts.authorLabel}: <strong>{selectedArticle.author[currentLang]}</strong></span>
+                <span>{texts.authorLabel}: <strong>{selectedArticle.author[currentLang] || selectedArticle.author["en"]}</strong></span>
               </div>
               <div className="flex items-center gap-1.5">
                 <Calendar className="w-3.5 h-3.5" />
@@ -784,10 +804,10 @@ export const Blog = () => {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 mb-10 items-start">
               <div className="lg:col-span-8">
                 <h1 className="text-2.5xl md:text-4.5xl font-black text-white tracking-tight uppercase leading-tight">
-                  {selectedArticle.title[currentLang]}
+                  {selectedArticle.title[currentLang] || selectedArticle.title["en"]}
                 </h1>
                 <p className="text-gray-400 text-lg leading-relaxed mt-4 font-light italic">
-                  {selectedArticle.description[currentLang]}
+                  {selectedArticle.description[currentLang] || selectedArticle.description["en"]}
                 </p>
               </div>
 
@@ -796,7 +816,7 @@ export const Blog = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent z-10" />
                 <img
                   src={selectedArticle.image}
-                  alt={selectedArticle.title[currentLang]}
+                  alt={selectedArticle.title[currentLang] || selectedArticle.title["en"]}
                   className="w-full h-full object-contain max-h-[220px] filter drop-shadow-[0_10px_20px_rgba(79,70,229,0.15)] group-hover:scale-105 transition-transform duration-500"
                   referrerPolicy="referrer"
                   onError={(e) => {
@@ -809,7 +829,7 @@ export const Blog = () => {
             {/* Rich Content Area */}
             <div className="prose prose-invert max-w-none text-gray-300 space-y-6 leading-relaxed mb-10 text-sm md:text-base border-t border-white/5 pt-8">
               <p className="text-gray-300 font-light text-justify select-text">
-                {selectedArticle.content[currentLang]}
+                {selectedArticle.content[currentLang] || selectedArticle.content["en"]}
               </p>
             </div>
 
@@ -819,19 +839,19 @@ export const Blog = () => {
                 {texts.takeawayTitle}
               </h3>
               <p className="text-emerald-100 text-sm leading-relaxed">
-                {selectedArticle.clinicalTakeaway[currentLang]}
+                {selectedArticle.clinicalTakeaway[currentLang] || selectedArticle.clinicalTakeaway["en"]}
               </p>
             </div>
 
             {/* Practical operational tip items list */}
-            {selectedArticle.practicalTips[currentLang] && (
+            {(selectedArticle.practicalTips[currentLang] || selectedArticle.practicalTips["en"]) && (
               <div className="bg-zinc-900/60 border border-white/5 rounded-2xl p-6">
                 <h3 className="text-white font-bold text-sm tracking-wider uppercase mb-4 flex items-center gap-2">
                   <span className="w-1.5 h-3 bg-indigo-500 rounded-full" />
                   {texts.tipsTitle}
                 </h3>
                 <ul className="space-y-3">
-                  {selectedArticle.practicalTips[currentLang].map((tip, i) => (
+                  {(selectedArticle.practicalTips[currentLang] || selectedArticle.practicalTips["en"]).map((tip, i) => (
                     <li key={i} className="flex gap-3 text-xs md:text-sm text-gray-300 items-start leading-relaxed">
                       <span className="text-indigo-400 font-bold font-mono shrink-0 mt-0.5">{i + 1}.</span>
                       <span className="select-text">{tip}</span>
@@ -888,7 +908,7 @@ export const Blog = () => {
                       className="text-sm font-bold uppercase tracking-wider relative py-3 px-1 transition-colors outline-none shrink-0"
                     >
                       <span className={isActive ? "text-white font-black" : "text-gray-500 hover:text-gray-300"}>
-                        {tab === "insights" ? "Insights" : tab === "services" ? "Services" : "Solutions"}
+                        {tab === "insights" ? texts.tabInsights : tab === "services" ? texts.tabServices : texts.tabSolutions}
                       </span>
                       {isActive && (
                         <motion.div
@@ -939,11 +959,14 @@ export const Blog = () => {
                   {/* Right Side: Image Galleries & Descriptions based on selected Categories */}
                   <div className="lg:col-span-9">
                     <div className="mb-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 text-xs font-mono border-b border-white/5 pb-3">
-                      <span className="text-gray-400 uppercase tracking-widest">
+                      <span className="text-gray-400 uppercase tracking-widest text-left">
                         {selectedCategory === "all" ? texts.allCategoriesDesc : categories.find(c => c.id === selectedCategory)?.name[currentLang]}
                       </span>
-                      <span className="text-indigo-400 font-bold">
-                        {filteredArticles.length} ARTICLE{filteredArticles.length !== 1 ? "S" : ""} FOUND
+                      <span className="text-indigo-400 font-bold text-right">
+                        {currentLang === "zh" ? `共检索到 ${filteredArticles.length} 篇学术文献` :
+                         currentLang === "ms" ? `${filteredArticles.length} ARTIKEL DIJUMPAI` :
+                         currentLang === "id" ? `${filteredArticles.length} ARTIKEL DITEMUKAN` :
+                         `${filteredArticles.length} ARTICLE${filteredArticles.length !== 1 ? "S" : ""} FOUND`}
                       </span>
                     </div>
 
@@ -972,8 +995,8 @@ export const Blog = () => {
                                   <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent z-10" />
                                   <img
                                     src={art.image}
-                                    alt={art.title[currentLang]}
-                                    className="h-full object-contain max-h-[140px] opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500 filter drop-shadow-[0_8px_16px_rgba(79,70,229,0.1)]"
+                                    alt={art.title[currentLang] || art.title["en"]}
+                                    className="h-full object-contain max-h-[140px] opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500 filter drop-shadow-[0_8px_16px_rgba(79,70,229,0.15)]"
                                     referrerPolicy="referrer"
                                     onError={(e) => {
                                       e.currentTarget.style.display = "none";
@@ -988,12 +1011,12 @@ export const Blog = () => {
 
                                 {/* Title */}
                                 <h3 className="text-lg font-black text-white leading-snug tracking-tight mb-2 group-hover:text-indigo-300 transition-colors">
-                                  {art.title[currentLang]}
+                                  {art.title[currentLang] || art.title["en"]}
                                 </h3>
 
                                 {/* Excerpt */}
                                 <p className="text-gray-400 text-xs sm:text-sm leading-relaxed mb-4 font-light">
-                                  {art.description[currentLang]}
+                                  {art.description[currentLang] || art.description["en"]}
                                 </p>
                               </div>
 
@@ -1019,11 +1042,14 @@ export const Blog = () => {
                 /* SERVICES OR SOLUTIONS SINGLE PAGES */
                 <div className="mt-4">
                   <div className="mb-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 text-xs font-mono border-b border-white/5 pb-3">
-                    <span className="text-gray-400 uppercase tracking-widest font-bold">
-                      EVE {activeSubMenu.toUpperCase()} PORTFOLIO & SPECIFICATIONS
+                    <span className="text-gray-400 uppercase tracking-widest font-bold text-left">
+                      {activeSubMenu === "services" ? texts.servicesHeading : texts.solutionsHeading}
                     </span>
-                    <span className="text-indigo-400 font-bold">
-                      {filteredArticles.length} DOCUMENTS Curator
+                    <span className="text-indigo-400 font-bold text-right">
+                      {currentLang === "zh" ? `${filteredArticles.length} 篇存档文献资料` :
+                       currentLang === "ms" ? `${filteredArticles.length} DOKUMEN DIKAYAKAN` :
+                       currentLang === "id" ? `${filteredArticles.length} DOKUMEN TERKURASI` :
+                       `${filteredArticles.length} DOCUMENTS CURATOR`}
                     </span>
                   </div>
 
@@ -1041,7 +1067,7 @@ export const Blog = () => {
                           <div className="w-full h-44 rounded-2xl bg-zinc-950 overflow-hidden border border-white/5 mb-6 group-hover:border-emerald-500/20 transition-colors flex items-center justify-center p-4">
                             <img
                               src={art.image}
-                              alt={art.title[currentLang]}
+                              alt={art.title[currentLang] || art.title["en"]}
                               className="h-full object-contain max-h-[140px] opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500 filter drop-shadow-[0_8px_16px_rgba(16,185,129,0.1)]"
                               referrerPolicy="referrer"
                               onError={(e) => {
@@ -1051,10 +1077,10 @@ export const Blog = () => {
                           </div>
 
                           <h3 className="text-xl font-black text-white leading-snug tracking-tight mb-3 group-hover:text-emerald-400 transition-colors uppercase">
-                            {art.title[currentLang]}
+                            {art.title[currentLang] || art.title["en"]}
                           </h3>
                           <p className="text-gray-400 text-sm leading-relaxed mb-6 font-light">
-                            {art.description[currentLang]}
+                            {art.description[currentLang] || art.description["en"]}
                           </p>
                         </div>
 
