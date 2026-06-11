@@ -124,7 +124,7 @@ export const aboutTranslations: Record<"en" | "ms" | "id", AboutTranslationSet> 
     rightDesc: "Ainil membawa kepakaran dalam sistem dan rangkaian, menggerakkan rakan kongsi strategik dan institusi untuk menterjemahkan visi EVE kepada impak dunia nyata. Beliau membina jambatan yang membolehkan EVE berkembang dan berterusan.",
     rightQuote: '"Pertumbuhan EVE bukan sekadar tentang perkembangan; tetapi mengenai penyatuan keseluruhan ekosistem. Kami menyatukam doktor, hospital, dan rakan kongsi strategik ke dalam satu infrastruktur untuk menghapuskan titik buta klinikal pada skala yang lebih besar."',
     archTag: "Seni Bina Di Sebalik EVE",
-    archTitle: "Rekod digital yang dipercayai demi kesinambungan harian, privasi, dan impak optimum.",
+    archTitle: "Rekod digital yang dipercayai yang dibina untuk kesinambungan harian, privasi, dan impak optimum.",
     centralLedger: "Lejar Pusat",
     captureTitle: "PENGUMPULAN DATA",
     captureDesc: "Data klinikal berstruktur yang direkodkan di setiap peringkat interaksi harian.",
