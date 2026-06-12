@@ -47,7 +47,7 @@ export const ClinicalInsights = () => {
     en: {
       sectionBadge: "CLINICAL DATA ENGINES",
       sectionTitle: "Operations & Data Spine",
-      sectionSubtitle: "Empowering maternal health providers with longitudinal clarity and seamless clinical utility.",
+      sectionSubtitle: "Empowering maternal health providers with longitudinal clarity and actionable clinical insights.",
       
       // Trio Navigation Buttons
       mitigationLabel: "Risk Mitigation",
@@ -120,7 +120,7 @@ export const ClinicalInsights = () => {
     ms: {
       sectionBadge: "ENJIN DATA KLINIKAL",
       sectionTitle: "Operasi & Tulang Belakang Data",
-      sectionSubtitle: "Memperkasakan penyedia kesihatan ibu bersalin dengan kejelasan membujur dan utiliti klinikal yang lancar.",
+      sectionSubtitle: "Memperkasakan penyedia kesihatan ibu bersalin dengan kejelasan membujur dan pandangan klinikal yang boleh diambil tindakan.",
       
       mitigationLabel: "Pengurangan Risiko",
       optimizationLabel: "Pengoptimuman Aliran Kerja",
@@ -185,7 +185,7 @@ export const ClinicalInsights = () => {
     id: {
       sectionBadge: "MESIN DATA KLINIS",
       sectionTitle: "Operasi & Tulang Punggung Data",
-      sectionSubtitle: "Memberdayakan penyedia kesehatan ibu dengan kejelasan longitudinal dan utilitas klinis yang mulus tanpa batas.",
+      sectionSubtitle: "Memberdayakan penyedia kesehatan ibu dengan kejelasan longitudinal dan wawasan klinis yang dapat ditindaklanjuti.",
       
       mitigationLabel: "Mitigasi Risiko",
       optimizationLabel: "Optimalisasi Alur Kerja",
