@@ -513,7 +513,7 @@ export const ClinicalInsights = () => {
 
                 {/* Operations Metric Display */}
                 <div className="mt-8 pt-6 border-t border-white/5 flex items-center justify-between">
-                  <span className="text-xs font-mono font-bold text-gray-500 uppercase tracking-widest">Calculated EVE Metric</span>
+
                   <div className={`flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10 rounded-xl font-bold font-mono text-xs ${operationsContent[activeTab].accent}`}>
                     <Sparkles size={12} className="animate-spin" />
                     <span>{operationsContent[activeTab].metric}</span>
