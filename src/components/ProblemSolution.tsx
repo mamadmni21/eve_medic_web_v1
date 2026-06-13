@@ -169,7 +169,7 @@ export const ProblemSolution = () => {
             <div>
               {/* Card Header row */}
               <div className="flex items-center justify-between mb-8">
-                <span className="text-5xl font-black text-white/5 group-hover:text-indigo-500/15 transition-all font-mono">
+                <span className="text-5xl font-black text-white group-hover:text-indigo-500/15 transition-all font-mono">
                   {content.solNum}
                 </span>
                 <span className="px-3.5 py-1.5 bg-indigo-500/10 border border-indigo-500/20 font-bold text-[10px] tracking-widest text-indigo-400 rounded-full uppercase">
