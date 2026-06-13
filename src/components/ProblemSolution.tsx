@@ -118,7 +118,7 @@ export const ProblemSolution = () => {
             <div>
               {/* Card Header row */}
               <div className="flex items-center justify-between mb-8">
-                <span className="text-5xl font-black text-white/5 group-hover:text-red-500/15 transition-all font-mono">
+                <span className="text-5xl font-black text-white group-hover:text-red-500/15 transition-all font-mono">
                   {content.probNum}
                 </span>
                 <span className="px-3.5 py-1.5 bg-red-500/10 border border-red-500/20 font-bold text-[10px] tracking-widest text-red-400 rounded-full uppercase">
