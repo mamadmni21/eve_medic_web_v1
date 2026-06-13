@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { Section } from "./Section";
 import { SECTIONS } from "../constants";
 import { useLanguage } from "../context/LanguageContext";
-import { BookOpen, ArrowLeft, Calendar, User, Clock, ChevronRight } from "lucide-react";
+import { BookOpen, ArrowLeft, Calendar, User, Clock, ChevronRight, Search, X } from "lucide-react";
 
 // @ts-ignore
 import about7Img from "../assets/images/about/about_7.png";
@@ -43,6 +43,7 @@ export const Blog = () => {
   const [activeSubMenu, setActiveSubMenu] = useState<SubMenu>("insights");
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [selectedArticle, setSelectedArticle] = useState<Article | null>(null);
+  const [searchQuery, setSearchQuery] = useState("");
 
   // 5 Custom Categories for the "Insights" tab
   const categories = useMemo(() => [
@@ -659,18 +660,38 @@ export const Blog = () => {
     }
   ], []);
 
-  // Filter articles based on active submenu and selected category filter
+  // Filter articles based on active submenu and selected category filter, plus query search across all contents
   const filteredArticles = useMemo(() => {
+    let list = articles;
+    const isSearching = !!searchQuery.trim();
+
+    if (isSearching) {
+      // Search across ALL articles irrespective of the active tab for maximum discoverability
+      const q = searchQuery.toLowerCase().trim();
+      list = articles.filter(art => {
+        const titleMatch = Object.values(art.title).some(val => val.toLowerCase().includes(q));
+        const descMatch = Object.values(art.description).some(val => val.toLowerCase().includes(q));
+        const contentMatch = Object.values(art.content).some(val => val.toLowerCase().includes(q));
+        return titleMatch || descMatch || contentMatch;
+      });
+      return list;
+    }
+
+    // Default behavior when NOT searching (partitioned by active tabs)
     if (activeSubMenu !== "insights") {
       // Services or Solutions are stored directly in their respective category names
-      return articles.filter(art => art.category === activeSubMenu);
+      list = articles.filter(art => art.category === activeSubMenu);
+    } else {
+      // For insights filter by sub-category
+      if (selectedCategory === "all") {
+        list = articles.filter(art => art.category !== "services" && art.category !== "solutions");
+      } else {
+        list = articles.filter(art => art.category === selectedCategory);
+      }
     }
-    // For insights filter by sub-category
-    if (selectedCategory === "all") {
-      return articles.filter(art => art.category !== "services" && art.category !== "solutions");
-    }
-    return articles.filter(art => art.category === selectedCategory);
-  }, [activeSubMenu, selectedCategory, articles]);
+
+    return list;
+  }, [activeSubMenu, selectedCategory, articles, searchQuery]);
 
   const localizedText = {
     en: {
@@ -691,7 +712,11 @@ export const Blog = () => {
       tabServices: "Services",
       tabSolutions: "Solutions",
       servicesHeading: "EVE SERVICES PORTFOLIO & SPECIFICATIONS",
-      solutionsHeading: "EVE SOLUTIONS PORTFOLIO & SPECIFICATIONS"
+      solutionsHeading: "EVE SOLUTIONS PORTFOLIO & SPECIFICATIONS",
+      searchPlaceholder: "Search insights, services, and solutions...",
+      searchClear: "Clear Search",
+      searchResultsFound: "Found {count} results for \"{query}\"",
+      noResults: "No results matched your search query."
     },
     ms: {
       badge: "PUSAT PENGETAHUAN KLINIKAL",
@@ -711,7 +736,11 @@ export const Blog = () => {
       tabServices: "Perkhidmatan",
       tabSolutions: "Penyelesaian",
       servicesHeading: "PORTFOLIO & SPESIFIKASI PERKHIDMATAN EVE",
-      solutionsHeading: "PORTFOLIO & SPESIFIKASI PENYELESAIAN EVE"
+      solutionsHeading: "PORTFOLIO & SPESIFIKASI PENYELESAIAN EVE",
+      searchPlaceholder: "Cari wawasan, perkhidmatan dan penyelesaian...",
+      searchClear: "Padam Carian",
+      searchResultsFound: "Menemui {count} keputusan carian bagi \"{query}\"",
+      noResults: "Tiada rekod padan dengan carian anda."
     },
     id: {
       badge: "PUSAT ILMU PENGETAHUAN KLINIKAL",
@@ -731,7 +760,11 @@ export const Blog = () => {
       tabServices: "Layanan",
       tabSolutions: "Solusi",
       servicesHeading: "PORTOFOLIO & SPESIFIKASI LAYANAN EVE",
-      solutionsHeading: "PORTOFOLIO & SPESIFIKASI SOLUSI EVE"
+      solutionsHeading: "PORTOFOLIO & SPESIFIKASI SOLUSI EVE",
+      searchPlaceholder: "Cari analisis, layanan, dan solusi EVE...",
+      searchClear: "Bersihkan Carian",
+      searchResultsFound: "Menampilkan {count} rujukan untuk \"{query}\"",
+      noResults: "Hasil pencarian tidak ditemukan."
     },
     zh: {
       badge: "权威临床知识库",
@@ -751,7 +784,11 @@ export const Blog = () => {
       tabServices: "专业服务",
       tabSolutions: "解决方案",
       servicesHeading: "EVE 临床服务项目组合与技术规范编制",
-      solutionsHeading: "EVE 行业解决方案技术指标与参考范式"
+      solutionsHeading: "EVE 行业解决方案技术指标与参考范式",
+      searchPlaceholder: "搜寻医学洞察、临床服务或解决方案...",
+      searchClear: "清空输入",
+      searchResultsFound: "共发现与 \"{query}\" 相关的结果数为: {count} 个",
+      noResults: "未找到符合检索条件的文章记录。"
     }
   };
 
@@ -818,7 +855,7 @@ export const Blog = () => {
                   src={selectedArticle.image}
                   alt={selectedArticle.title[currentLang] || selectedArticle.title["en"]}
                   className="w-full h-full object-contain max-h-[220px] filter drop-shadow-[0_10px_20px_rgba(79,70,229,0.15)] group-hover:scale-105 transition-transform duration-500"
-                  referrerPolicy="referrer"
+                  referrerPolicy="no-referrer"
                   onError={(e) => {
                     e.currentTarget.style.display = "none";
                   }}
@@ -893,6 +930,48 @@ export const Blog = () => {
               <div className="w-16 h-1 bg-gradient-to-r from-indigo-500 to-emerald-500 mx-auto mt-6 rounded-full" />
             </div>
 
+            {/* Elegant Search Form */}
+            <div className="max-w-2xl mx-auto mb-12 px-4 animate-fade-in">
+              <form onSubmit={(e) => e.preventDefault()} className="relative group">
+                <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-gray-500 group-focus-within:text-indigo-400 transition-colors">
+                  <Search className="w-5 h-5" />
+                </div>
+                <input
+                  type="text"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  placeholder={texts.searchPlaceholder}
+                  className="w-full pl-12 pr-12 py-4 bg-zinc-900/60 border border-white/10 rounded-2xl text-white text-sm placeholder-gray-500 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 backdrop-blur-md transition-all group-hover:border-white/20"
+                />
+                {searchQuery && (
+                  <button
+                    type="button"
+                    onClick={() => setSearchQuery("")}
+                    className="absolute inset-y-0 right-0 pr-4 flex items-center text-gray-400 hover:text-white transition-colors"
+                  >
+                    <X className="w-4 h-4 bg-white/5 p-0.5 rounded-full" />
+                  </button>
+                )}
+              </form>
+              
+              {/* Search Info overlay */}
+              {searchQuery && (
+                <div className="text-center mt-3 text-xs font-mono text-indigo-400 flex items-center justify-center gap-2">
+                  <span>
+                    {texts.searchResultsFound
+                      .replace("{count}", filteredArticles.length.toString())
+                      .replace("{query}", searchQuery)}
+                  </span>
+                  <button 
+                    onClick={() => setSearchQuery("")} 
+                    className="underline text-gray-400 hover:text-white"
+                  >
+                    {texts.searchClear}
+                  </button>
+                </div>
+              )}
+            </div>
+
             {/* Submenus - Navigation tabs: Insights, Services, Solutions */}
             <div className="flex justify-center border-b border-white/10 max-w-md mx-auto mb-12">
               <div className="flex gap-6 w-full justify-between px-2">
@@ -924,7 +1003,86 @@ export const Blog = () => {
 
             {/* Core Submenu Views */}
             <div className="w-full">
-              {activeSubMenu === "insights" ? (
+              {searchQuery.trim() ? (
+                /* UNIFIED SEARCH RESULTS BOARD */
+                <div className="mt-4">
+                  <div className="mb-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 text-xs font-mono border-b border-white/5 pb-3">
+                    <span className="text-gray-400 uppercase tracking-widest font-bold text-left">
+                      {texts.searchResultsFound
+                        .replace("{count}", filteredArticles.length.toString())
+                        .replace("{query}", searchQuery)}
+                    </span>
+                    <span className="text-zinc-500 font-bold text-right uppercase tracking-[0.2em] hidden sm:inline">
+                      {currentLang === "zh" ? "全局库分析匹配结果" : "GLOBAL SEARCH MATCHES"}
+                    </span>
+                  </div>
+
+                  {filteredArticles.length === 0 ? (
+                    <div className="text-center py-24 bg-zinc-900/20 border border-dashed border-white/10 rounded-3xl p-6">
+                      <p className="text-gray-500 text-sm">{texts.noResults}</p>
+                    </div>
+                  ) : (
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
+                      {filteredArticles.map((art) => (
+                        <motion.div
+                          key={art.id}
+                          layout
+                          initial={{ opacity: 0, y: 15 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          onClick={() => setSelectedArticle(art)}
+                          className="bg-zinc-900/30 rounded-3xl border border-white/5 hover:border-indigo-500/30 hover:bg-zinc-900/40 transition-all duration-300 p-6 flex flex-col group justify-between cursor-pointer relative shadow-lg"
+                        >
+                          <div>
+                            {/* Display category tag/badge based on main type */}
+                            <div className="mb-4">
+                              <span className={`text-[9px] font-mono font-black tracking-widest px-2.5 py-1 rounded-full border uppercase ${
+                                art.category === "services" 
+                                  ? "bg-emerald-500/10 border-emerald-500/20 text-emerald-300"
+                                  : art.category === "solutions"
+                                  ? "bg-purple-500/10 border-purple-500/20 text-purple-300"
+                                  : "bg-indigo-500/10 border-indigo-500/20 text-indigo-300"
+                              }`}>
+                                {art.category === "services" ? texts.tabServices : art.category === "solutions" ? texts.tabSolutions : texts.tabInsights}
+                              </span>
+                            </div>
+
+                            {/* Thumbnail display box with onError safety */}
+                            <div className="w-full h-40 rounded-2xl bg-zinc-950 overflow-hidden border border-white/5 mb-4 group-hover:border-indigo-500/10 transition-colors flex items-center justify-center p-3 relative">
+                              <img
+                                src={art.image}
+                                alt={art.title[currentLang] || art.title["en"]}
+                                className="h-full object-contain max-h-[120px] opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500 filter drop-shadow-[0_8px_16px_rgba(79,70,229,0.1)]"
+                                referrerPolicy="no-referrer"
+                                onError={(e) => {
+                                  e.currentTarget.style.display = "none";
+                                }}
+                              />
+                            </div>
+
+                            <h3 className="text-base font-black text-white leading-snug tracking-tight mb-2 group-hover:text-indigo-300 transition-colors uppercase">
+                              {art.title[currentLang] || art.title["en"]}
+                            </h3>
+
+                            <p className="text-gray-400 text-xs leading-relaxed mb-4 font-light line-clamp-3">
+                              {art.description[currentLang] || art.description["en"]}
+                            </p>
+                          </div>
+
+                          <div className="flex items-center justify-between border-t border-white/5 pt-4 mt-auto">
+                            <span className="text-[10px] text-gray-500 font-mono tracking-wider">
+                              {art.date}
+                            </span>
+                            <span className="text-xs font-black text-indigo-400 group-hover:text-indigo-300 flex items-center gap-1 transition-colors uppercase tracking-widest">
+                              {texts.readArticle}
+                              <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+                            </span>
+                          </div>
+                        </motion.div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ) : activeSubMenu === "insights" ? (
                 /* INSIGHTS SPLIT VIEW: Left Category Sidebar, Right Galleries Grid */
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-start mt-4">
                   
@@ -972,7 +1130,7 @@ export const Blog = () => {
 
                     {filteredArticles.length === 0 ? (
                       <div className="text-center py-24 bg-zinc-900/20 border border-dashed border-white/10 rounded-3xl p-6">
-                        <p className="text-gray-500 text-sm">{texts.noArticles}</p>
+                        <p className="text-gray-500 text-sm">{searchQuery ? texts.noResults : texts.noArticles}</p>
                       </div>
                     ) : (
                       /* GALLERIES CARD GRID */
@@ -997,7 +1155,7 @@ export const Blog = () => {
                                     src={art.image}
                                     alt={art.title[currentLang] || art.title["en"]}
                                     className="h-full object-contain max-h-[140px] opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500 filter drop-shadow-[0_8px_16px_rgba(79,70,229,0.15)]"
-                                    referrerPolicy="referrer"
+                                    referrerPolicy="no-referrer"
                                     onError={(e) => {
                                       e.currentTarget.style.display = "none";
                                     }}
@@ -1053,49 +1211,55 @@ export const Blog = () => {
                     </span>
                   </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
-                    {filteredArticles.map((art) => (
-                      <motion.div
-                        key={art.id}
-                        initial={{ opacity: 0, y: 15 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        onClick={() => setSelectedArticle(art)}
-                        className="bg-zinc-900/30 rounded-3xl border border-white/5 hover:border-emerald-500/30 hover:bg-zinc-900/40 transition-all duration-300 p-8 flex flex-col group justify-between cursor-pointer relative shadow-lg"
-                      >
-                        <div>
-                          {/* Centered Image display for Service/Solution */}
-                          <div className="w-full h-44 rounded-2xl bg-zinc-950 overflow-hidden border border-white/5 mb-6 group-hover:border-emerald-500/20 transition-colors flex items-center justify-center p-4">
-                            <img
-                              src={art.image}
-                              alt={art.title[currentLang] || art.title["en"]}
-                              className="h-full object-contain max-h-[140px] opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500 filter drop-shadow-[0_8px_16px_rgba(16,185,129,0.1)]"
-                              referrerPolicy="referrer"
-                              onError={(e) => {
-                                e.currentTarget.style.display = "none";
-                              }}
-                            />
+                  {filteredArticles.length === 0 ? (
+                    <div className="text-center py-24 bg-zinc-900/20 border border-dashed border-white/10 rounded-3xl p-6">
+                      <p className="text-gray-500 text-sm">{searchQuery ? texts.noResults : texts.noArticles}</p>
+                    </div>
+                  ) : (
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+                      {filteredArticles.map((art) => (
+                        <motion.div
+                          key={art.id}
+                          initial={{ opacity: 0, y: 15 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          onClick={() => setSelectedArticle(art)}
+                          className="bg-zinc-900/30 rounded-3xl border border-white/5 hover:border-emerald-500/30 hover:bg-zinc-900/40 transition-all duration-300 p-8 flex flex-col group justify-between cursor-pointer relative shadow-lg"
+                        >
+                          <div>
+                            {/* Centered Image display for Service/Solution */}
+                            <div className="w-full h-44 rounded-2xl bg-zinc-950 overflow-hidden border border-white/5 mb-6 group-hover:border-emerald-500/20 transition-colors flex items-center justify-center p-4">
+                              <img
+                                src={art.image}
+                                alt={art.title[currentLang] || art.title["en"]}
+                                className="h-full object-contain max-h-[140px] opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500 filter drop-shadow-[0_8px_16px_rgba(16,185,129,0.1)]"
+                                referrerPolicy="no-referrer"
+                                onError={(e) => {
+                                  e.currentTarget.style.display = "none";
+                                }}
+                              />
+                            </div>
+
+                            <h3 className="text-xl font-black text-white leading-snug tracking-tight mb-3 group-hover:text-emerald-400 transition-colors uppercase">
+                              {art.title[currentLang] || art.title["en"]}
+                            </h3>
+                            <p className="text-gray-400 text-sm leading-relaxed mb-6 font-light">
+                              {art.description[currentLang] || art.description["en"]}
+                            </p>
                           </div>
 
-                          <h3 className="text-xl font-black text-white leading-snug tracking-tight mb-3 group-hover:text-emerald-400 transition-colors uppercase">
-                            {art.title[currentLang] || art.title["en"]}
-                          </h3>
-                          <p className="text-gray-400 text-sm leading-relaxed mb-6 font-light">
-                            {art.description[currentLang] || art.description["en"]}
-                          </p>
-                        </div>
-
-                        <div className="flex items-center justify-between border-t border-white/5 pt-4 mt-auto">
-                          <span className="text-xs text-gray-500 font-mono tracking-wider">
-                            SPEC: #{art.id.toUpperCase().substring(0, 10)}
-                          </span>
-                          <span className="text-xs font-black text-emerald-400 group-hover:text-emerald-300 flex items-center gap-1 transition-colors uppercase tracking-widest">
-                            {texts.readArticle}
-                            <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
-                          </span>
-                        </div>
-                      </motion.div>
-                    ))}
-                  </div>
+                          <div className="flex items-center justify-between border-t border-white/5 pt-4 mt-auto">
+                            <span className="text-xs text-gray-500 font-mono tracking-wider">
+                              SPEC: #{art.id.toUpperCase().substring(0, 10)}
+                            </span>
+                            <span className="text-xs font-black text-emerald-400 group-hover:text-emerald-300 flex items-center gap-1 transition-colors uppercase tracking-widest">
+                              {texts.readArticle}
+                              <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+                            </span>
+                          </div>
+                        </motion.div>
+                      ))}
+                    </div>
+                  )}
                 </div>
               )}
             </div>

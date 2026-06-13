@@ -53,7 +53,11 @@ export default function App() {
 
   const navigate = (page: string) => {
     const path = page === "home" ? "/" : `/${page}`;
-    window.history.pushState(null, "", path);
+    try {
+      window.history.pushState(null, "", path);
+    } catch (err) {
+      console.warn("History navigation blocked: pushState is denied in this iframe sandbox.", err);
+    }
     setCurrentPage(page);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };

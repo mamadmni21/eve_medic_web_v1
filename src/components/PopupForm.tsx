@@ -32,8 +32,8 @@ export const PopupForm = ({ isOpen, onClose }: PopupFormProps) => {
           setFormData({ name: "", email: "", message: "" });
         }, 2500);
       }
-    } catch (error) {
-      console.error("Failed to send message", error);
+    } catch (error: any) {
+      console.error("Failed to send message:", error?.message || String(error));
       setStatus("idle");
     }
   };

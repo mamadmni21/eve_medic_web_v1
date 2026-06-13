@@ -13,9 +13,13 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   const [language, setLanguageState] = useState<Language>(() => {
     // Attempt localstorage read
     if (typeof window !== "undefined") {
-      const saved = localStorage.getItem("eve_lang") as Language;
-      if (saved && ["en", "ms", "id", "zh"].includes(saved)) {
-        return saved;
+      try {
+        const saved = localStorage.getItem("eve_lang") as Language;
+        if (saved && ["en", "ms", "id", "zh"].includes(saved)) {
+          return saved;
+        }
+      } catch (e) {
+        console.warn("Storage access denied: localStorage is disabled in this iframe sandbox.", e);
       }
     }
     return "en";
@@ -23,7 +27,11 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
 
   const setLanguage = (lang: Language) => {
     setLanguageState(lang);
-    localStorage.setItem("eve_lang", lang);
+    try {
+      localStorage.setItem("eve_lang", lang);
+    } catch (e) {
+      console.warn("Storage write denied: localStorage is disabled in this iframe sandbox.", e);
+    }
   };
 
   const t = translations[language];
