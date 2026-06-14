@@ -52,7 +52,6 @@ export interface TranslationSet {
     systemF1: string;
     systemF2: string;
     systemF3: string;
-    systemF4: string;
     highlight1: string;
     highlight2: string;
     statusActive: string;
