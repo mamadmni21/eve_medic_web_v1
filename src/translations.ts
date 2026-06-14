@@ -52,6 +52,7 @@ export interface TranslationSet {
     systemF1: string;
     systemF2: string;
     systemF3: string;
+    systemF4: string;
     highlight1: string;
     highlight2: string;
     statusActive: string;
@@ -170,6 +171,7 @@ export const translations: Record<Language, TranslationSet> = {
       systemF1: "Doctor can only access a snapshot of a patient's health condition",
       systemF2: "They see where the patient is STANDING right now but they can't see the PATH she took to get there",
       systemF3: "The experience changes with EVE",
+      systemF4: "Clinical clarity at a galnce",
       highlight1: "Health Snapshot",
       highlight2: "Instant Clarity",
       statusActive: "ACTIVE",
@@ -351,6 +353,7 @@ export const translations: Record<Language, TranslationSet> = {
       systemF1: "Doktor hanya dapat melihat GAMBARAN SEMASA keadaan kesihatan pesakit",
       systemF2: "Mereka dapat melihat KEADAAN pesakit pada saat ini tetapi mereka tidak dapat melihat PERJALANAN yang telah dilalui untuk sampai ke tahap tersebut",
       systemF3: "Pengalaman penjagaan berubah dengan EVE",
+      systemF4: "Kejelasan klinikal sekilas pandang",
       highlight1: "Gambaran Kesihatan",
       highlight2: "Kejelasan Segera",
       statusActive: "AKTIF",
@@ -532,6 +535,7 @@ export const translations: Record<Language, TranslationSet> = {
       systemF1: "Dokter hanya dapat melihat GAMBARAN SEKILAS kondisi kesehatan pasien",
       systemF2: "Nereka dapar melihat di mana POSISI pasien pada saat ini tetpai mereka tidak dapat melihat PERJALANAN yang telah dilalui pasien untuk sampai ke titik tersebut",
       systemF3: "Pengalaman perawatan berubah bersama EVE",
+      systemF4: "Kejelasan klinis sekilas",
       highlight1: "Snapshot Kesehatan",
       highlight2: "Kejelasan Instan",
       statusActive: "AKTIF",
