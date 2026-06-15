@@ -535,7 +535,7 @@ export const Blog = () => {
         id: "Menyelaraskan komunikasi data pasien antara bidan puskesmas, pendamping persalinan, dan dokter kandungan."
       },
       content: {
-        en: "Pregnancy and postpartum care often involve multiple stakeholders, including obstetricians, family physicians, nurses, lactation consultants, physiotherapists, caregivers a d family members. EVE's permission-based sharing framework allows patients to securely grant view access to selected individuals within their support network, ensuring everyone remains aligned throughout the care journey. By improving communication and continuity of information,EVE helps reduce fragmented care, supports informed decision-making, and promotes a more coordinated patients experiences. All data access remains under the patient's control and can be modified or revoked at any time through a simple dashboard. Clinical Value Prepositions: Facilitates patient-centred care by improving coordination between healthcare providers and authorised support persons, reducing information gaps and enhancing continuity throughout pregnancy, birth and postpartum recovery. Operational Guidelines: 1. Add authorised healthcare professionals and trusted support persons through EVE's secure sharing permissions. 2. Review care plans, appointments and relevant health records with your healthcare team within the platform. 3. Manage, update or revoke access permissions instantly through the patient dashboard.",
+          en: "Pregnancy and postpartum care often involve multiple stakeholders, including obstetricians, family physicians, nurses, lactation consultants, physiotherapists, caregivers a d family members. EVE's permission-based sharing framework allows patients to securely grant view access to selected individuals within their support network, ensuring everyone remains aligned throughout the care journey. By improving communication and continuity of information,EVE helps reduce fragmented care, supports informed decision-making, and promotes a more coordinated patients experiences. All data access remains under the patient's control and can be modified or revoked at any time through a simple dashboard.",
         ms: "Keputusan kesihatan ibu bertambah baik secara drastik apabila pasukan pakar bekerjasama secara harmoni dengan doula dan bidan komuniti. Kebenaran perkongsian data EVE yang selamat membolehkan pesakit berkongsi akses rekod pranatal kepada pembela bersalin pilihan mereka secara telus. Ini mewujudkan lingkaran sokongan bersepadu di sekeliling ibu, menggabungkan kepakaran perubatan dan sokongan moral.",
         id: "Angka keselamatan ibu melahirkan melonjak naik ketika bidan komunitas, pendamping persalinan (doula), dan dokter rumah sakit bekerja dengan satu data yang sama. Kontrol izin akses mandiri EVE memberikan kendali penuh kepada ibu hamil untuk mempercayakan catatan pemeriksaannya dibaca oleh pendamping pilihannya. Ini memastikan kebersamaan, rasa aman, dan integrasi penanganan yang humanis dari awal kehamilan sampai bersalin."
       },
@@ -544,15 +544,15 @@ export const Blog = () => {
       author: { en: "Ainil Fariha", ms: "Ainil Fariha", id: "Ainil Fariha" },
       readTime: "5 min read",
       clinicalTakeaway: {
-        en: "Symphonizing non-clinical support networks with medical staff minimizes stress and labor hours.",
+        en: "Facilitates patient-centred care by improving coordination between healthcare providers and authorised support persons, reducing information gaps and enhancing continuity throughout pregnancy, birth and postpartum recovery.",
         ms: "Penyelarasan sokongan bukan klinikal dengan kakitangan perubatan mengurangkan tahap stres dan mengawal masa bersalin.",
         id: "Harmonisasi data antara tenaga medis dan pendamping kehamilan mengurangi stres mental ibu, memperlancar kelahiran."
       },
       practicalTips: {
         en: [
-          "Add approved practitioners to your EVE companion shares whitelist.",
-          "Review birth plans together with your doula and primary OB-GYN in the system.",
-          "Manage data revocations instantly with click-based toggle options."
+          "Add authrorised healthcare professionals and trusted support persons through EVE's secure sharing permissions.",
+          "Review care plans, appointments and relevant health records with your healthcare team within the platform.",
+          "Manage, update or revoke access permissions instantly through the patient dashboard."
         ],
         ms: [
           "Tambah bidan atau penyedia penjagaan berlesen anda ke dalam senarai kebenaran akses EVE.",
