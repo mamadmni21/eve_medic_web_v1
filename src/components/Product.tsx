@@ -341,8 +341,8 @@ export const Product = () => {
       parts: [
         {
           img: prod0Img,
-          title: "Aliran data bersepadu",
-          desc: "Mengurangkan semakan rekod secara manual dan minimumkan ralat."
+          title: "Aliran data terpusat",
+          desc: "Mengurangkan semakan carta secara manual dan ralat."
         },
         {
           img: prod1Img,
@@ -352,7 +352,7 @@ export const Product = () => {
         {
           img: prod2Img,
           title: "Triage ramalan",
-          desc: "Mengoptimumkan aliran kerja dengan mengutamakan kes berisiko tinggi."
+          desc: "Mengoptimumkan aliran kerja anda dengan mengutamakan kes berisiko tinggi."
         }
       ]
     },
@@ -362,7 +362,7 @@ export const Product = () => {
       parts: [
         {
           img: prod0Img,
-          title: "Aliran data terkonsolidasi",
+          title: "Aliran data terintegrasi",
           desc: "Mengurangi kesalahan dan peninjauan grafik secara manual."
         },
         {
@@ -373,7 +373,7 @@ export const Product = () => {
         {
           img: prod2Img,
           title: "Triage prediktif",
-          desc: "Mengoptimalkan alur kerja dengan memprioritaskan kasus berisiko tinggi."
+          desc: "Mengoptimalkan alur kerja Anda dengan memprioritaskan kasus berisiko tinggi."
         }
       ]
     }
@@ -407,7 +407,7 @@ export const Product = () => {
       ]
     },
     ms: {
-      badge: "Penjagaan Lancar Dari Tendangan Pertama Sehingga Kelahiran",
+      badge: "Penjagaan Lancar Sejak Tendangan Pertama Sehingga Kelahiran",
       title: "Alami Kesinambungan Sepenuhnya bersama EVE",
       parts: [
         {
@@ -418,17 +418,17 @@ export const Product = () => {
         {
           img: prod4Img,
           title: "Pengetahuan Pakar",
-          desc: "Panduan yang dipercayai untuk membantu melalui sepanjang perubahan."
+          desc: "Panduan dipercayai untuk membantu anda melalui perubahan."
         },
         {
           img: prod5Img,
-          title: "Ikatan dengan Bayi",
-          desc: "Jejak tendangan harian bayi untuk mengeratkan hubungan & memastikan keselamatan bayi"
+          title: "Hubungan Bayi",
+          desc: "Jejak tendangan harian untuk mengeratkan hubungan & memastikan keselamatan bayi"
         },
         {
           img: prod6Img,
           title: "Sokongan Kesejahteraan",
-          desc: "Pemeriksaan kendiri yang pantas untuk membantu memantau kesejahteraan anda"
+          desc: "Daftar masuk segera untuk sentiasa memantau kesejahteraan anda"
         }
       ]
     },
@@ -444,17 +444,17 @@ export const Product = () => {
         {
           img: prod4Img,
           title: "Pengetahuan Pakar",
-          desc: "Panduan tepercaya untuk membantu Anda melalui setiap perubahan."
+          desc: "Panduan tepercaya untuk membantu Anda melalui perubahan."
         },
         {
           img: prod5Img,
-          title: "Hubungan dengan Bayi",
-          desc: "Pantau tendangan harian untuk mengeratkan ikatan & memastikan keselamatan bayi"
+          title: "Hubungan Bayi",
+          desc: "Lacak tendangan harian untuk mengeratkan ikatan & memastikan keselamatan bayi"
         },
         {
           img: prod6Img,
           title: "Dukungan Kesejahteraan",
-          desc: "Pemeriksaan mandiri yang cepat untuk memastikan kesejahteraan Anda terpantau"
+          desc: "Pemeriksaan cepat untuk memastikan kesejahteraan Anda terpantau"
         }
       ]
     }
@@ -471,8 +471,8 @@ export const Product = () => {
       t.product.systemF1,
       t.product.systemF2,
       t.product.systemF3,
-      t.product.systemF4
-    ],
+      (t.product as any).systemF4
+    ].filter(Boolean) as string[],
     highlights: [
       { icon: <Activity />, label: t.product.highlight1 },
       { icon: <Zap />, label: t.product.highlight2 },

@@ -713,7 +713,6 @@ export const translations: Record<Language, TranslationSet> = {
       systemF1: "医生仅需调取便可获取孕妇健康状况的清晰瞬态画像",
       systemF2: "一目了然的临床清晰度",
       systemF3: "从胎动初现到顺利分娩的全程无缝呵护",
-      systemF4: "实时生命体征 telemetry 高速整合",
       highlight1: "健康瞬态画像",
       highlight2: "即时洞察",
       statusActive: "运行正常",

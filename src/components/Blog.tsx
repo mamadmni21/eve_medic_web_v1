@@ -535,7 +535,7 @@ export const Blog = () => {
         id: "Menyelaraskan komunikasi data pasien antara bidan puskesmas, pendamping persalinan, dan dokter kandungan."
       },
       content: {
-          en: "Pregnancy and postpartum care often involve multiple stakeholders, including obstetricians, family physicians, nurses, lactation consultants, physiotherapists, caregivers a d family members. EVE's permission-based sharing framework allows patients to securely grant view access to selected individuals within their support network, ensuring everyone remains aligned throughout the care journey. By improving communication and continuity of information,EVE helps reduce fragmented care, supports informed decision-making, and promotes a more coordinated patients experiences. All data access remains under the patient's control and can be modified or revoked at any time through a simple dashboard.",
+          en: "Pregnancy and postpartum care often involve multiple stakeholders, including obstetricians, family physicians, nurses, lactation consultants, physiotherapists, caregivers and family members.\n\nEVE's permission-based sharing framework allows patients to securely grant view access to selected individuals within their support network, ensuring everyone remains aligned throughout the care journey.\n\nBy improving communication and continuity of information, EVE helps reduce fragmented care, supports informed decision-making, and promotes a more coordinated patient experience.\n\nAll data access remains under the patient's control and can be modified or revoked at any time through a simple dashboard.",
         ms: "Keputusan kesihatan ibu bertambah baik secara drastik apabila pasukan pakar bekerjasama secara harmoni dengan doula dan bidan komuniti. Kebenaran perkongsian data EVE yang selamat membolehkan pesakit berkongsi akses rekod pranatal kepada pembela bersalin pilihan mereka secara telus. Ini mewujudkan lingkaran sokongan bersepadu di sekeliling ibu, menggabungkan kepakaran perubatan dan sokongan moral.",
         id: "Angka keselamatan ibu melahirkan melonjak naik ketika bidan komunitas, pendamping persalinan (doula), dan dokter rumah sakit bekerja dengan satu data yang sama. Kontrol izin akses mandiri EVE memberikan kendali penuh kepada ibu hamil untuk mempercayakan catatan pemeriksaannya dibaca oleh pendamping pilihannya. Ini memastikan kebersamaan, rasa aman, dan integrasi penanganan yang humanis dari awal kehamilan sampai bersalin."
       },
@@ -864,10 +864,16 @@ export const Blog = () => {
             </div>
 
             {/* Rich Content Area */}
-            <div className="prose prose-invert max-w-none text-gray-300 space-y-6 leading-relaxed mb-10 text-sm md:text-base border-t border-white/5 pt-8">
-              <p className="text-gray-300 font-light text-justify select-text">
-                {selectedArticle.content[currentLang] || selectedArticle.content["en"]}
-              </p>
+            <div className="prose prose-invert max-w-none text-gray-300 space-y-6 leading-relaxed mb-10 text-sm md:text-base border-t border-white/5 pt-8 select-text">
+              {(selectedArticle.content[currentLang] || selectedArticle.content["en"])
+                .split("\n")
+                .map((para: string) => para.trim())
+                .filter(Boolean)
+                .map((para: string, idx: number) => (
+                  <p key={idx} className="text-gray-300 font-light text-justify select-text">
+                    {para}
+                  </p>
+                ))}
             </div>
 
             {/* Clinical Value Box */}
