@@ -23,7 +23,7 @@ export const Contact = ({ onSendMessage }: ContactProps) => {
   ];
 
   return (
-    <Section id={SECTIONS.CONTACT} className="bg-zinc-950 border-t border-white/5">
+    <Section id={SECTIONS.CONTACT} className="bg-zinc-950 border-t border-white/5" gradientPlacement="center">
       <div className="grid lg:grid-cols-2 gap-20 items-start">
         <div>
           <h2 className="text-sm font-bold text-indigo-500 uppercase tracking-[0.4em] mb-4">{t.contact.badge}</h2>

@@ -22,6 +22,8 @@ export const Hero = ({ onSendMessage, onNavigate }: HeroProps) => {
     >
       {/* Animated Background Gradients */}
       <div className="absolute inset-0 z-0">
+        {/* Ambient #191863 Top-Mid/Center Gradient */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[500px] bg-[#191863] opacity-50 blur-[140px] rounded-full pointer-events-none -translate-y-1/3" />
         <motion.div 
           animate={{ 
             scale: [1, 1.2, 1],

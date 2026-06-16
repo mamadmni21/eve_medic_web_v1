@@ -45,7 +45,7 @@ export const About = () => {
   const texts = aboutTranslations[currentLang];
 
   return (
-    <Section id={SECTIONS.ABOUT} className="bg-zinc-950">
+    <Section id={SECTIONS.ABOUT} className="bg-zinc-950" gradientPlacement="top-right">
       <div className="grid lg:grid-cols-2 gap-16 items-center">
         <div>
           <h2 className="text-sm font-bold text-indigo-500 uppercase tracking-[0.3em] mb-4">

@@ -796,7 +796,7 @@ export const Blog = () => {
   const texts = localizedText[currentLang];
 
   return (
-    <Section id={SECTIONS.BLOG} dark className="pt-28">
+    <Section id={SECTIONS.BLOG} dark className="pt-28" gradientPlacement="top-left">
       {/* Article Detail View Screen */}
       <AnimatePresence mode="wait">
         {selectedArticle ? (
