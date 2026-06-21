@@ -448,9 +448,10 @@ export const About = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="flex flex-col text-center bg-zinc-900/30 rounded-3xl border border-white/5 p-6 hover:border-indigo-500/30 transition-all duration-300 relative group justify-between"
+              className="flex flex-col text-center bg-zinc-900/30 rounded-3xl border border-white/5 p-6 hover:border-indigo-500/30 transition-all duration-300 relative group justify-between overflow-hidden"
             >
-              <div className="flex flex-col items-center">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,#191863_0%,transparent_75%)] opacity-65 pointer-events-none z-0 transition-opacity duration-300 group-hover:opacity-85" />
+              <div className="flex flex-col items-center relative z-10">
                 <div className="w-20 h-20 rounded-2xl overflow-hidden border border-white/10 bg-zinc-950/60 flex items-center justify-center p-3 mb-4 group-hover:border-indigo-500/40 transition-colors shadow-lg">
                   <img 
                     src={about7Img} 
@@ -464,7 +465,7 @@ export const About = () => {
                   {texts.p1Title}
                 </h4>
               </div>
-              <p className="text-gray-400 text-xs sm:text-sm leading-relaxed mt-2">
+              <p className="text-gray-400 text-xs sm:text-sm leading-relaxed mt-2 relative z-10">
                 {texts.p1Desc}
               </p>
             </motion.div>
@@ -475,9 +476,10 @@ export const About = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="flex flex-col text-center bg-zinc-900/30 rounded-3xl border border-white/5 p-6 hover:border-indigo-500/30 transition-all duration-300 relative group justify-between"
+              className="flex flex-col text-center bg-zinc-900/30 rounded-3xl border border-white/5 p-6 hover:border-indigo-500/30 transition-all duration-300 relative group justify-between overflow-hidden"
             >
-              <div className="flex flex-col items-center">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,#191863_0%,transparent_75%)] opacity-65 pointer-events-none z-0 transition-opacity duration-300 group-hover:opacity-85" />
+              <div className="flex flex-col items-center relative z-10">
                 <div className="w-20 h-20 rounded-2xl overflow-hidden border border-white/10 bg-zinc-950/60 flex items-center justify-center p-3 mb-4 group-hover:border-indigo-500/40 transition-colors shadow-lg">
                   <img 
                     src={about8Img} 
@@ -491,7 +493,7 @@ export const About = () => {
                   {texts.p2Title}
                 </h4>
               </div>
-              <p className="text-gray-400 text-xs sm:text-sm leading-relaxed mt-2">
+              <p className="text-gray-400 text-xs sm:text-sm leading-relaxed mt-2 relative z-10">
                 {texts.p2Desc}
               </p>
             </motion.div>
@@ -502,9 +504,10 @@ export const About = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="flex flex-col text-center bg-zinc-900/30 rounded-3xl border border-white/5 p-6 hover:border-emerald-500/30 transition-all duration-300 relative group justify-between"
+              className="flex flex-col text-center bg-zinc-900/30 rounded-3xl border border-white/5 p-6 hover:border-emerald-500/30 transition-all duration-300 relative group justify-between overflow-hidden"
             >
-              <div className="flex flex-col items-center">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,#191863_0%,transparent_75%)] opacity-65 pointer-events-none z-0 transition-opacity duration-300 group-hover:opacity-85" />
+              <div className="flex flex-col items-center relative z-10">
                 <div className="w-20 h-20 rounded-2xl overflow-hidden border border-white/10 bg-zinc-950/60 flex items-center justify-center p-3 mb-4 group-hover:border-emerald-500/40 transition-colors shadow-lg">
                   <img 
                     src={about9Img} 
@@ -518,7 +521,7 @@ export const About = () => {
                   {texts.p3Title}
                 </h4>
               </div>
-              <p className="text-gray-400 text-xs sm:text-sm leading-relaxed mt-2">
+              <p className="text-gray-400 text-xs sm:text-sm leading-relaxed mt-2 relative z-10">
                 {texts.p3Desc}
               </p>
             </motion.div>
@@ -529,9 +532,10 @@ export const About = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
-              className="flex flex-col text-center bg-zinc-900/30 rounded-3xl border border-white/5 p-6 hover:border-emerald-500/30 transition-all duration-300 relative group justify-between"
+              className="flex flex-col text-center bg-zinc-900/30 rounded-3xl border border-white/5 p-6 hover:border-emerald-500/30 transition-all duration-300 relative group justify-between overflow-hidden"
             >
-              <div className="flex flex-col items-center">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,#191863_0%,transparent_75%)] opacity-65 pointer-events-none z-0 transition-opacity duration-300 group-hover:opacity-85" />
+              <div className="flex flex-col items-center relative z-10">
                 <div className="w-20 h-20 rounded-2xl overflow-hidden border border-white/10 bg-zinc-950/60 flex items-center justify-center p-3 mb-4 group-hover:border-emerald-500/40 transition-colors shadow-lg">
                   <img 
                     src={about10Img} 
@@ -545,7 +549,7 @@ export const About = () => {
                   {texts.p4Title}
                 </h4>
               </div>
-              <p className="text-gray-400 text-xs sm:text-sm leading-relaxed mt-2">
+              <p className="text-gray-400 text-xs sm:text-sm leading-relaxed mt-2 relative z-10">
                 {texts.p4Desc}
               </p>
             </motion.div>
@@ -571,9 +575,10 @@ export const About = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="flex flex-col text-center bg-zinc-900/30 rounded-3xl border border-white/5 p-6 hover:border-indigo-500/30 transition-all duration-300 relative group justify-between"
+              className="flex flex-col text-center bg-zinc-900/30 rounded-3xl border border-white/5 p-6 hover:border-indigo-500/30 transition-all duration-300 relative group justify-between overflow-hidden"
             >
-              <div className="flex flex-col items-center">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,#191863_0%,transparent_75%)] opacity-65 pointer-events-none z-0 transition-opacity duration-300 group-hover:opacity-85" />
+              <div className="flex flex-col items-center relative z-10">
                 <div className="w-20 h-20 rounded-2xl overflow-hidden border border-white/10 bg-zinc-950/60 flex items-center justify-center p-3 mb-4 group-hover:border-indigo-500/40 transition-colors shadow-lg">
                   <img 
                     src={about11Img} 
@@ -587,7 +592,7 @@ export const About = () => {
                   {texts.r1Title}
                 </h4>
               </div>
-              <p className="text-gray-400 text-xs sm:text-sm leading-relaxed mt-2">
+              <p className="text-gray-400 text-xs sm:text-sm leading-relaxed mt-2 relative z-10">
                 {texts.r1Desc}
               </p>
             </motion.div>
@@ -598,9 +603,10 @@ export const About = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="flex flex-col text-center bg-zinc-900/30 rounded-3xl border border-white/5 p-6 hover:border-indigo-500/30 transition-all duration-300 relative group justify-between"
+              className="flex flex-col text-center bg-zinc-900/30 rounded-3xl border border-white/5 p-6 hover:border-indigo-500/30 transition-all duration-300 relative group justify-between overflow-hidden"
             >
-              <div className="flex flex-col items-center">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,#191863_0%,transparent_75%)] opacity-65 pointer-events-none z-0 transition-opacity duration-300 group-hover:opacity-85" />
+              <div className="flex flex-col items-center relative z-10">
                 <div className="w-20 h-20 rounded-2xl overflow-hidden border border-white/10 bg-zinc-950/60 flex items-center justify-center p-3 mb-4 group-hover:border-indigo-500/40 transition-colors shadow-lg">
                   <img 
                     src={about12Img} 
@@ -614,7 +620,7 @@ export const About = () => {
                   {texts.r2Title}
                 </h4>
               </div>
-              <p className="text-gray-400 text-xs sm:text-sm leading-relaxed mt-2">
+              <p className="text-gray-400 text-xs sm:text-sm leading-relaxed mt-2 relative z-10">
                 {texts.r2Desc}
               </p>
             </motion.div>
@@ -625,9 +631,10 @@ export const About = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="flex flex-col text-center bg-zinc-900/30 rounded-3xl border border-white/5 p-6 hover:border-emerald-500/30 transition-all duration-300 relative group justify-between"
+              className="flex flex-col text-center bg-zinc-900/30 rounded-3xl border border-white/5 p-6 hover:border-emerald-500/30 transition-all duration-300 relative group justify-between overflow-hidden"
             >
-              <div className="flex flex-col items-center">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,#191863_0%,transparent_75%)] opacity-65 pointer-events-none z-0 transition-opacity duration-300 group-hover:opacity-85" />
+              <div className="flex flex-col items-center relative z-10">
                 <div className="w-20 h-20 rounded-2xl overflow-hidden border border-white/10 bg-zinc-950/60 flex items-center justify-center p-3 mb-4 group-hover:border-emerald-500/40 transition-colors shadow-lg">
                   <img 
                     src={about13Img} 
@@ -641,7 +648,7 @@ export const About = () => {
                   {texts.r3Title}
                 </h4>
               </div>
-              <p className="text-gray-400 text-xs sm:text-sm leading-relaxed mt-2">
+              <p className="text-gray-400 text-xs sm:text-sm leading-relaxed mt-2 relative z-10">
                 {texts.r3Desc}
               </p>
             </motion.div>
@@ -652,9 +659,10 @@ export const About = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
-              className="flex flex-col text-center bg-zinc-900/30 rounded-3xl border border-white/5 p-6 hover:border-emerald-500/30 transition-all duration-300 relative group justify-between"
+              className="flex flex-col text-center bg-zinc-900/30 rounded-3xl border border-white/5 p-6 hover:border-emerald-500/30 transition-all duration-300 relative group justify-between overflow-hidden"
             >
-              <div className="flex flex-col items-center">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,#191863_0%,transparent_75%)] opacity-65 pointer-events-none z-0 transition-opacity duration-300 group-hover:opacity-85" />
+              <div className="flex flex-col items-center relative z-10">
                 <div className="w-20 h-20 rounded-2xl overflow-hidden border border-white/10 bg-zinc-950/60 flex items-center justify-center p-3 mb-4 group-hover:border-emerald-500/40 transition-colors shadow-lg">
                   <img 
                     src={about14Img} 
@@ -668,7 +676,7 @@ export const About = () => {
                   {texts.r4Title}
                 </h4>
               </div>
-              <p className="text-gray-400 text-xs sm:text-sm leading-relaxed mt-2">
+              <p className="text-gray-400 text-xs sm:text-sm leading-relaxed mt-2 relative z-10">
                 {texts.r4Desc}
               </p>
             </motion.div>
