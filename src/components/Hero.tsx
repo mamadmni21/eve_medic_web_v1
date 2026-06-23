@@ -22,27 +22,17 @@ export const Hero = ({ onSendMessage, onNavigate }: HeroProps) => {
     >
       {/* Animated Background Gradients */}
       <div className="absolute inset-0 z-0">
-        {/* Ambient #191863 Top-Mid/Center Gradient */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[500px] bg-[#191863] opacity-50 blur-[140px] rounded-full pointer-events-none -translate-y-1/3" />
+        {/* Ambient Top-Right Gradient (Vibrant & Brighter) */}
+        <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-gradient-to-br from-[#3533CD] via-[#4f46e5] to-[#8b5cf6] opacity-75 blur-[120px] rounded-full pointer-events-none translate-x-1/4 -translate-y-1/3" />
         <motion.div 
           animate={{ 
             scale: [1, 1.2, 1],
-            opacity: [0.3, 0.5, 0.3],
-            x: [0, 100, 0],
-            y: [0, 50, 0]
+            opacity: [0.55, 0.75, 0.55],
+            x: [0, 50, 0],
+            y: [0, 30, 0]
           }}
           transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-          className="absolute top-[-10%] right-[-10%] w-[60%] h-[60%] rounded-full bg-[#3533CD] blur-[120px]"
-        />
-        <motion.div 
-          animate={{ 
-            scale: [1, 1.3, 1],
-            opacity: [0.2, 0.4, 0.2],
-            x: [0, -50, 0],
-            y: [0, -100, 0]
-          }}
-          transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
-          className="absolute bottom-[-10%] left-[-10%] w-[50%] h-[50%] rounded-full bg-[#25094B] blur-[100px]"
+          className="absolute top-[-10%] right-[-10%] w-[60%] h-[60%] rounded-full bg-gradient-to-br from-[#3533CD] to-[#8b5cf6] blur-[100px]"
         />
       </div>
 

@@ -20,10 +20,20 @@ export const Navbar = ({ onSendMessage, currentPage, onNavigate }: NavbarProps) 
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      try {
+        setIsScrolled(window.scrollY > 50);
+      } catch (e) {}
     };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    try {
+      window.addEventListener("scroll", handleScroll);
+      return () => {
+        try {
+          window.removeEventListener("scroll", handleScroll);
+        } catch (e) {}
+      };
+    } catch (e) {
+      console.warn("Could not register scroll event in sandbox context:", e);
+    }
   }, []);
 
   const navLinks = [

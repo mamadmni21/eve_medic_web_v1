@@ -480,7 +480,7 @@ export const Product = () => {
   };
 
   return (
-    <Section id={SECTIONS.PRODUCT} className="bg-black" gradientPlacement="bottom-mid">
+    <Section id={SECTIONS.PRODUCT} className="bg-black" gradientPlacement="top-right">
       <div className="text-center mb-16">
         <h2 className="text-sm font-bold text-purple-400 uppercase tracking-[0.4em] mb-4">{t.product.badge}</h2>
         <h3 className="text-4xl md:text-7xl font-black text-white tracking-tighter">{t.product.title}</h3>

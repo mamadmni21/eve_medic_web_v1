@@ -11,24 +11,12 @@ interface SectionProps {
 
 export const Section = ({ id, children, className = "", dark = false, gradientPlacement }: SectionProps) => {
   const renderGradient = () => {
-    switch (gradientPlacement) {
-      case 'top-left':
-        return <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-[#191863] opacity-45 blur-[150px] rounded-full pointer-events-none -translate-x-1/3 -translate-y-1/3 z-0" />;
-      case 'top-right':
-        return <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#191863] opacity-45 blur-[150px] rounded-full pointer-events-none translate-x-1/3 -translate-y-1/3 z-0" />;
-      case 'top-mid':
-        return <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[500px] bg-[#191863] opacity-40 blur-[140px] rounded-full pointer-events-none -translate-y-1/3 z-0" />;
-      case 'bottom-left':
-        return <div className="absolute bottom-0 left-0 w-[650px] h-[650px] bg-[#191863] opacity-45 blur-[150px] rounded-full pointer-events-none -translate-x-1/3 translate-y-1/3 z-0" />;
-      case 'bottom-right':
-        return <div className="absolute bottom-0 right-0 w-[650px] h-[650px] bg-[#191863] opacity-45 blur-[150px] rounded-full pointer-events-none translate-x-1/3 translate-y-1/3 z-0" />;
-      case 'bottom-mid':
-        return <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[700px] h-[500px] bg-[#191863] opacity-40 blur-[140px] rounded-full pointer-events-none translate-y-1/3 z-0" />;
-      case 'center':
-        return <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#191863] opacity-35 blur-[160px] rounded-full pointer-events-none z-0" />;
-      default:
-        return null;
-    }
+    if (!gradientPlacement) return null;
+    
+    // As per user request, make all gradations positioned at top-right and much brighter
+    return (
+      <div className="absolute top-0 right-0 w-[650px] h-[650px] bg-gradient-to-br from-[#3533CD] via-[#4f46e5] to-[#8b5cf6] opacity-75 blur-[120px] rounded-full pointer-events-none translate-x-1/3 -translate-y-1/3 z-0" />
+    );
   };
 
   return (

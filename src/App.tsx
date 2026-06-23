@@ -38,17 +38,41 @@ export default function App() {
     return SECTIONS.HOME;
   };
 
-  const [currentPage, setCurrentPage] = useState<string>(() => getPageFromPath(window.location.pathname));
+  const [currentPage, setCurrentPage] = useState<string>(() => {
+    try {
+      if (typeof window !== "undefined" && window.location) {
+        return getPageFromPath(window.location.pathname);
+      }
+    } catch (e) {
+      console.warn("Failed to get location pathname in sandbox:", e);
+    }
+    return SECTIONS.HOME;
+  });
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const { t } = useLanguage();
 
   useEffect(() => {
     const handlePopState = () => {
-      setCurrentPage(getPageFromPath(window.location.pathname));
-      window.scrollTo({ top: 0, behavior: "instant" as any });
+      try {
+        if (typeof window !== "undefined" && window.location) {
+          setCurrentPage(getPageFromPath(window.location.pathname));
+        }
+      } catch (e) {
+        console.warn("Failed to update path on popstate:", e);
+      }
+      try {
+        window.scrollTo({ top: 0, behavior: "instant" as any });
+      } catch (err) {
+        // Fallback for custom browsers/iframes
+        window.scrollTo(0, 0);
+      }
     };
-    window.addEventListener("popstate", handlePopState);
-    return () => window.removeEventListener("popstate", handlePopState);
+    try {
+      window.addEventListener("popstate", handlePopState);
+      return () => window.removeEventListener("popstate", handlePopState);
+    } catch (e) {
+      console.warn("Failed to attach popstate event listener in sandbox:", e);
+    }
   }, []);
 
   const navigate = (page: string) => {
@@ -59,7 +83,13 @@ export default function App() {
       console.warn("History navigation blocked: pushState is denied in this iframe sandbox.", err);
     }
     setCurrentPage(page);
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    try {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } catch (err) {
+      try {
+        window.scrollTo(0, 0);
+      } catch (e) {}
+    }
   };
 
   return (

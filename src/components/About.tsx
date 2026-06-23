@@ -42,7 +42,7 @@ export const About = () => {
   
   // Resolve actual language, fall back to "en" if "zh" isn't matched or if other values are unexpected
   const currentLang = (language === "ms" || language === "id" || language === "zh") ? language : "en";
-  const texts = aboutTranslations[currentLang];
+  const texts = aboutTranslations[currentLang] || aboutTranslations["en"];
 
   return (
     <Section id={SECTIONS.ABOUT} className="bg-zinc-950" gradientPlacement="top-right">

@@ -422,11 +422,10 @@ export const ClinicalInsights = () => {
 
   return (
     <section className="relative py-24 px-6 md:px-12 bg-zinc-950/80 border-t border-white/5 overflow-hidden">
-      {/* Ambient #191863 Top-Right Gradient */}
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#191863] opacity-45 blur-[150px] rounded-full pointer-events-none translate-x-1/3 -translate-y-1/3 z-0" />
+      {/* Ambient Top-Right Gradient (Vibrant & Brighter) */}
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-br from-[#3533CD] via-[#4f46e5] to-[#8b5cf6] opacity-75 blur-[120px] rounded-full pointer-events-none translate-x-1/3 -translate-y-1/3 z-0" />
       {/* Dynamic light visual backdrops */}
-      <div className="absolute top-0 right-1/4 w-96 h-96 bg-indigo-600/5 blur-[150px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-pink-600/5 blur-[150px] rounded-full pointer-events-none" />
+      <div className="absolute top-0 right-1/4 w-96 h-96 bg-indigo-500/20 blur-[120px] rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto relative z-10">
         

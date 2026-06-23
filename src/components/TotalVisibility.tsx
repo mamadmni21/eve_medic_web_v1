@@ -40,11 +40,10 @@ export const TotalVisibility = () => {
 
   return (
     <section className="py-24 px-6 md:px-12 bg-black border-t border-white/5 relative overflow-hidden">
-      {/* Ambient #191863 Bottom-Right Gradient */}
-      <div className="absolute bottom-0 right-0 w-[650px] h-[650px] bg-[#191863] opacity-45 blur-[150px] rounded-full pointer-events-none translate-x-1/3 translate-y-1/3 z-0" />
+      {/* Ambient Top-Right Gradient (Vibrant & Brighter) */}
+      <div className="absolute top-0 right-0 w-[650px] h-[650px] bg-gradient-to-br from-[#3533CD] via-[#4f46e5] to-[#8b5cf6] opacity-75 blur-[120px] rounded-full pointer-events-none translate-x-1/3 -translate-y-1/3 z-0" />
       {/* Ambient background glow effects */}
-      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[400px] h-[400px] bg-indigo-500/5 blur-[120px] rounded-full pointer-events-none" />
-      <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[400px] h-[400px] bg-pink-500/5 blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute top-0 right-1/4 w-[400px] h-[400px] bg-indigo-500/20 blur-[120px] rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto">
         {/* Headheading layout */}

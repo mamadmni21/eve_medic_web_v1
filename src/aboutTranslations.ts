@@ -51,7 +51,7 @@ export interface AboutTranslationSet {
   r4Desc: string;
 }
 
-export const aboutTranslations: Record<"en" | "ms" | "id", AboutTranslationSet> = {
+export const aboutTranslations: Record<"en" | "ms" | "id" | "zh", AboutTranslationSet> = {
   en: {
     topBadge: "The Architecture of Trust",
     title: "EVE is building the trusted digital record in maternal healthcare",
@@ -207,6 +207,58 @@ export const aboutTranslations: Record<"en" | "ms" | "id", AboutTranslationSet> 
     r3Desc: "Mendirikan kerja sama integratif formal dengan jaringan klinik bersalin dan rumah sakit rujukan daerah.",
     r4Title: "4. HASIL TERVERIFIKASI",
     r4Desc: "Membuktikan secara ilmiah bahwa integrasi database andal meningkatkan hasil dan kontinuitas pengobatan."
+  },
+  zh: {
+    topBadge: "信任的架构",
+    title: "EVE Medic 致力于构建孕产妇医疗保健中值得信赖的数字记录体系",
+    desc: "我们结合临床真相与系统性执行力，缩小碎片化护理中的鸿沟，加强连续性，并改善每一位女性的健康成果。",
+    imgLeft: "临床必要性\n（事实真相）",
+    imgRight: "系统化执行\n（规模化）",
+    imgBottom: "更好的数据，更好的决策，更好的结果。",
+    engineTag: "核心基石",
+    engineTitle: "我们的双引擎领导力",
+    leftAnchor: "临床之锚",
+    leftName: "Dr. Arifah Hamim",
+    leftSub: "发现系统盲点的临床医生",
+    leftDesc: "Dr. Arifah Hamim 在孕产妇和生育关怀领域拥有数十年的经验，带来了深厚的临床专业知识。她深知患者历史碎片化带来的风险，并确保 EVE Medic 植根于真实的临床需求和患者安全。",
+    leftQuote: "“女性的健康史不应该依赖于她的记忆或一张纸。我现在的关注点是确保‘临床盲点’成为过去，每个临床医生都能拥有提供安全、尊严关怀所需的完整背景。”",
+    rightAnchor: "生态系统桥梁",
+    rightName: "Ainil Fidrah Ghazali",
+    rightSub: "将愿景连接至整个生态",
+    rightDesc: "Ainil 在系统和网络方面拥有深厚的专业知识，她调动各类合作伙伴与机构，将 EVE 的愿景转化为现实世界的影响力。她构建了让 EVE 持续规模化发展和长青的桥梁。",
+    rightQuote: "“规模化 EVE 不仅仅是关于增长，而是关于动员整个生态系统。我们正在将临床医生、医院和合作伙伴汇聚到一个统一的基础设施中，以在更大范围内消除临床盲点。”",
+    archTag: "EVE 背后的架构",
+    archTitle: "为连续性、隐私性和最终成果而构建的、值得信赖的数字记录。",
+    centralLedger: "中央账本",
+    captureTitle: "数据捕获",
+    captureDesc: "在每一个有意义的接触点捕获结构化的临床数据。",
+    validationTitle: "标准化与验证",
+    validationDesc: "数据经过标准化、验证与加密，确保其准确性与可靠性。",
+    recordTitle: "值得信赖的数字记录",
+    interopTitle: "安全互操作性",
+    interopDesc: "在医疗系统和合作伙伴之间，进行无缝且基于患者授权的数据交换。",
+    outcomesTitle: "经验证的健康成果",
+    outcomesDesc: "真实世界的证据生成深刻的见解，从而改善护理并为临床决策提供依据。",
+    pillarTag: "运营原则",
+    pillarTitle: "系统架构的核心支柱",
+    p1Title: "隐私安全设计",
+    p1Desc: "以强大的安全性和患者授权为核心而构建。",
+    p2Title: "临床主导管理",
+    p2Desc: "基于临床专业知识和循证标准引路。",
+    p3Title: "生态相连互通",
+    p3Desc: "旨在与诊所、医院、实验室和可信赖的伙伴深度整合。",
+    p4Title: "聚焦健康成果",
+    p4Desc: "旨在实现医疗连续性与安全性方面的显著改善。",
+    roadTag: "EVE 评估路径",
+    roadTitle: "我们的路线图：验证基础设施",
+    r1Title: "1. 临床采纳",
+    r1Desc: "确保医生在日常诊疗中积极使用 EVE 平台。",
+    r2Title: "2. 实时旅程记录",
+    r2Desc: "捕获患者在整个孕期中的真实、长时间跨度的数据。",
+    r3Title: "3. 生态主骨干",
+    r3Desc: "与重点诊所与医院建立正式合作关系。",
+    r4Title: "4. 验证最终效果",
+    r4Desc: "通过确凿的证据表明，高可靠的临床数据能显着改善连续多阶段的病情关怀。"
   }
 };
 
