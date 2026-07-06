@@ -449,7 +449,7 @@ export const Blog = () => {
       },
       image: about14Img,
       date: "2026-05-02",
-      author: { en: "Dr. Ainil Fariha", ms: "Dr. Ainil Fariha", id: "Dr. Ainil Fariha" },
+      author: { en: "Dr. Arifah Hamim", ms: "Dr. Arifah Hamim", id: "Dr. Arifah Hamim" },
       readTime: "5 min read",
       clinicalTakeaway: {
         en: "Systemic monitoring during the first 6 weeks reduces readmission and mental health vulnerability.",
@@ -496,7 +496,7 @@ export const Blog = () => {
       },
       image: about11Img,
       date: "2026-06-09",
-      author: { en: "Ainil Fariha", ms: "Ainil Fariha", id: "Ainil Fariha" },
+      author: { en: "Dr Arifah Hamim", ms: "Dr Arifah Hamim", id: "Dr Arifah Hamim" },
       readTime: "7 min read",
       clinicalTakeaway: {
         en: "Integrated live interfaces convert local rural clinics into high-capability obstetric nodes.",
@@ -541,7 +541,7 @@ export const Blog = () => {
       },
       image: about13Img,
       date: "2026-06-03",
-      author: { en: "Ainil Fariha", ms: "Ainil Fariha", id: "Ainil Fariha" },
+      author: { en: "Dr. Arifah Hamim", ms: "Dr. Arifah Hamim", id: "Dr. Arifah Hamim" },
       readTime: "5 min read",
       clinicalTakeaway: {
         en: "Facilitates patient-centred care by improving coordination between healthcare providers and authorised support persons, reducing information gaps and enhancing continuity throughout pregnancy, birth and postpartum recovery.",
@@ -588,7 +588,7 @@ export const Blog = () => {
       },
       image: about10Img,
       date: "2026-06-08",
-      author: { en: "Ainil Fariha", ms: "Ainil Fariha", id: "Ainil Fariha" },
+      author: { en: "Dr. Arifah Hamim", ms: "Dr. Arifah Hamim", id: "Dr. Arifah Hamim" },
       readTime: "6 min read",
       clinicalTakeaway: {
         en: "HL7/FHIR cross-compatibility is key to scalable national maternal data health initiatives.",
@@ -633,7 +633,7 @@ export const Blog = () => {
       },
       image: about14Img,
       date: "2026-05-30",
-      author: { en: "Ainil Fariha", ms: "Ainil Fariha", id: "Ainil Fariha" },
+      author: { en: "Dr. Arifah Hamim", ms: "Dr. Arifah Hamim", id: "Dr. Arifah Hamim" },
       readTime: "5 min read",
       clinicalTakeaway: {
         en: "Pre-assembled compliant backends compress integration expense by up to 70%.",
